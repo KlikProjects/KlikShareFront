@@ -1,5 +1,6 @@
 <template>
 <h1>card here or trash</h1>
+<button type="button" class="btn btn-primary">Primary</button>
 </template>
 
 <script>
