@@ -1,11 +1,17 @@
 <template>
+
+<div class="mainContainer">
 <Header/>
+
 <div id="nav">
     
    
 </div>
 <router-view/>
+  <div class="footer">
   <Footer/>
+  </div>
+</div>
 </template>
 <script>
 // @ is an alias to /src
@@ -43,4 +49,20 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+.mainContainer{
+height: 100vh;
+background-color:#C4C4C4;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
+}
+
 </style>
+
+
+
