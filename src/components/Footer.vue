@@ -1,5 +1,5 @@
 <template>
-<div class="rutas position-absolute top-100 w-100">
+<div class="rutas position-absolute top-100 w-100 ">
   <div class="d-flex  justify-content-around d-flex flex-row">
     <div class="p-5">
       <router-link to="/"><span class="iconify" data-icon="bx:bx-home" data-inline="false"></span></router-link>
@@ -48,5 +48,7 @@ a {
 .rutas {
   display: flex;
   justify-content: center;
+  z-index: 1 !important;
+  background-color:#C4C4C4;
 }
 </style>

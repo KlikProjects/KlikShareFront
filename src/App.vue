@@ -2,6 +2,7 @@
 
 <div class="mainContainer">
 <Header/>
+<Footer/>
 
 <div id="nav">
     
@@ -9,7 +10,6 @@
 </div>
 <router-view/>
   <div class="footer">
-  <Footer/>
   </div>
 </div>
 </template>
