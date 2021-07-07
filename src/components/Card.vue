@@ -4,17 +4,19 @@
     <div class="background p-1 overflow-hidden">
       <img
         src="https://mundokawaii.store/wp-content/uploads/2019/05/ropa-kawaii-1.jpg"
-        class="img img-responsive"/>
+        class="img img-responsive rounded mx-auto d-block"/>
      
      <div class="position-relative" >
-     <div class=" profile-name-div position-absolute top-50">
-      <div class="profile-name ">JOHN DOE</div>
-    </div>
-      <div class="profile-username position-absolute top-30 start-50 translate-middle"><button type="button" class="btn btn-primary bottom-0 end-0">Solicitar</button></div>
-    </div>
-    </div>
+  
+      <div class="profile-name ">Sudera </div>
+   
+      <div class="profile-username position-absolute bottom-0 start-50 translate-middle"><button type="button" class="btn btn-primary bottom-0 end-0">Solicitar</button></div>
+ 
     </div> 
   </div>
+</div>
+</div>
+  
 </template>
 
 <script>
@@ -51,7 +53,7 @@
     cursor: pointer;
     border-radius: 10px;
     width: 220px;
-    height: 230px;
+    height: 270px;
   }
 
   .profile-card-2 img {
@@ -61,7 +63,7 @@
   .background{
     color: #000;
     width: 210px;
-    max-height: 225px;
+    max-height: 265px;
   }
 
   .profile-card-2 .profile-name {
