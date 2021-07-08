@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="profile-card-2 ">
-    <div class="background p-1 overflow-hidden">
+    <div class="background p-1 overflow-hidden rounded">
       <img
         src="https://mundokawaii.store/wp-content/uploads/2019/05/ropa-kawaii-1.jpg"
         class="img img-responsive rounded mx-auto d-block"/>
@@ -62,7 +62,7 @@
   }
   .background{
     color: #000;
-    width: 210px;
+    max-width: 215px;
     max-height: 265px;
   }
 

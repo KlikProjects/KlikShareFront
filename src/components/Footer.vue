@@ -1,11 +1,24 @@
 <template>
-<div>
-
-<router-link to="/">Home</router-link> |
-<router-link to="/about">About</router-link> 
+<div class="rutas position-absolute top-100 w-100 ">
+  <div class="d-flex  justify-content-around d-flex flex-row">
+    <div class="p-5">
+      <router-link to="/"><span class="iconify" data-icon="bx:bx-home" data-inline="false"></span></router-link>
+    </div>
+    <div class="p-5">
+      <router-link to="/gifts"><span class="iconify" data-icon="ion:gift-outline" data-inline="false"></span></router-link>
+    </div>
+    <div class="p-5">
+      <router-link to="/create"><span class="iconify" data-icon="ant-design:plus-circle-outlined" data-inline="false"></span></router-link>
+    </div>
+    <div class="p-5">
+      <router-link to="/maps"><span class="iconify" data-icon="mdi:google-maps" data-inline="false"></span></router-link>
+    </div>
+    <div class="p-5">
+      <router-link to="/chat"><span class="iconify" data-icon="akar-icons:chat-dots" data-inline="false"></span></router-link>
+    </div>
+  </div>
 </div>
 </template>
-
 <script>
 export default {
   name: 'footer',
@@ -32,4 +45,10 @@ a {
   color: #42b983;
 }
 
+.rutas {
+  display: flex;
+  justify-content: center;
+  z-index: 1 !important;
+  background-color:#C4C4C4;
+}
 </style>

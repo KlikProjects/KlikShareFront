@@ -1,16 +1,22 @@
 <template>
+
+<div class="mainContainer">
 <Header/>
+<Footer/>
+
 <div id="nav">
     
    
 </div>
 <router-view/>
-  <Footer/>
+  <div class="footer">
+  </div>
+</div>
 </template>
 <script>
 // @ is an alias to /src
-import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 
 export default {
@@ -43,4 +49,20 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+.mainContainer{
+height: 100vh;
+background-color:#C4C4C4;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
+}
+
 </style>
+
+
+
