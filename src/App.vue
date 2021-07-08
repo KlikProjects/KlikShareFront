@@ -55,9 +55,7 @@ background-color:#C4C4C4;
 }
 
 .footer{
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  position: flex;
   width: 100%;
   
 }
