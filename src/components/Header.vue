@@ -1,5 +1,8 @@
 <template>
-<h1>header</h1>
+<div class="navbar">
+  <router-link to="/"><span class="iconify" data-icon="bx:bx-home" data-inline="false"></span></router-link>
+
+</div>
 </template>
 
 <script>
@@ -27,4 +30,5 @@ li {
 a {
   color: #42b983;
 }
+
 </style>
