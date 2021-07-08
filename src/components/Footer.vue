@@ -1,11 +1,21 @@
 <template>
-<div class="rutas position-absolute top-100">
-  <div class="d-flex  justify-content-between">
-    <router-link to="/"><span class="iconify" data-icon="bx:bx-home" data-inline="false"></span></router-link>
-    <router-link to="/gifts"><span class="iconify" data-icon="ion:gift-outline" data-inline="false"></span></router-link>
-    <router-link to="/create"><span class="iconify" data-icon="ant-design:plus-circle-outlined" data-inline="false"></span></router-link>
-    <router-link to="/maps"><span class="iconify" data-icon="mdi:google-maps" data-inline="false"></span></router-link>
-    <router-link to="/chat"><span class="iconify" data-icon="akar-icons:chat-dots" data-inline="false"></span></router-link>
+<div class="rutas position-absolute top-100 w-100 ">
+  <div class="d-flex  justify-content-around d-flex flex-row w-100">
+    <div class="p-5">
+      <router-link to="/"><span class="iconify" data-icon="bx:bx-home" data-inline="false"></span></router-link>
+    </div>
+    <div class="p-5">
+      <router-link to="/gifts"><span class="iconify" data-icon="ion:gift-outline" data-inline="false"></span></router-link>
+    </div>
+    <div class="p-5 plus">
+      <router-link to="/create"><span class="iconify" data-icon="ant-design:plus-circle-outlined" data-inline="false"></span></router-link>
+    </div>
+    <div class="p-5">
+      <router-link to="/maps"><span class="iconify" data-icon="mdi:google-maps" data-inline="false"></span></router-link>
+    </div>
+    <div class="p-5">
+      <router-link to="/chat"><span class="iconify" data-icon="akar-icons:chat-dots" data-inline="false"></span></router-link>
+    </div>
   </div>
 </div>
 </template>
@@ -32,12 +42,15 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: #A4EBF3;
 }
 
 .rutas {
-  display: inline-flex;
-  justify-content: space-around;
-  
+  display: flex;
+  justify-content: center;
+  background-color: #4A483F;
+  font-size: 40px;
 }
+
+
 </style>

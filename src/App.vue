@@ -2,6 +2,7 @@
 
 <div class="mainContainer">
 <Header/>
+<Footer/>
 
 <div id="nav">
     
@@ -9,14 +10,13 @@
 </div>
 <router-view/>
   <div class="footer">
-  <Footer/>
   </div>
 </div>
 </template>
 <script>
 // @ is an alias to /src
-import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 
 export default {
@@ -59,7 +59,6 @@ background-color:#C4C4C4;
   left: 0;
   bottom: 0;
   width: 100%;
-  
 }
 
 </style>
