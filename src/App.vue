@@ -2,14 +2,14 @@
 
 <div class="mainContainer">
 <Header/>
-<Footer/>
 
-<div id="nav">
+
+  <div id="nav">
     
-   
-</div>
+  </div>
 <router-view/>
   <div class="footer">
+    <Footer/>
   </div>
 </div>
 </template>
@@ -17,6 +17,7 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
+
 
 
 export default {
