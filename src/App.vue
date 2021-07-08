@@ -2,7 +2,7 @@
 
 <div class="mainContainer">
 <Header/>
-
+<!-- <Footer/> -->
 
   <div id="nav">
     

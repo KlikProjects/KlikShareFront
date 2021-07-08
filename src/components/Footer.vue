@@ -48,7 +48,7 @@ a {
 .rutas {
   display: flex;
   justify-content: center;
-  z-index: 1 !important;
   background-color:#4A483F;
+  font-size: 40px;
 }
 </style>
