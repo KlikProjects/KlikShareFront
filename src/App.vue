@@ -59,7 +59,6 @@ background-color:#C4C4C4;
   left: 0;
   bottom: 0;
   width: 100%;
-  
 }
 
 </style>
