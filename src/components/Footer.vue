@@ -1,13 +1,13 @@
 <template>
 <div class="rutas position-absolute top-100 w-100 ">
-  <div class="d-flex  justify-content-around d-flex flex-row">
+  <div class="d-flex  justify-content-around d-flex flex-row w-100">
     <div class="p-5">
       <router-link to="/"><span class="iconify" data-icon="bx:bx-home" data-inline="false"></span></router-link>
     </div>
     <div class="p-5">
       <router-link to="/gifts"><span class="iconify" data-icon="ion:gift-outline" data-inline="false"></span></router-link>
     </div>
-    <div class="p-5">
+    <div class="p-5 plus">
       <router-link to="/create"><span class="iconify" data-icon="ant-design:plus-circle-outlined" data-inline="false"></span></router-link>
     </div>
     <div class="p-5">
@@ -42,13 +42,15 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: #A4EBF3;
 }
 
 .rutas {
   display: flex;
   justify-content: center;
-  z-index: 1 !important;
-  background-color:#C4C4C4;
+  background-color: #4A483F;
+  font-size: 40px;
 }
+
+
 </style>
