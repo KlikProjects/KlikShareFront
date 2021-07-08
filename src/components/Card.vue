@@ -1,22 +1,27 @@
 <template>
   <div>
     <div class="profile-card-2 ">
-    <div class="background p-1 overflow-hidden rounded">
-      <img
-        src="https://mundokawaii.store/wp-content/uploads/2019/05/ropa-kawaii-1.jpg"
-        class="img img-responsive rounded mx-auto d-block"/>
-     
-     <div class="position-relative" >
-  
-      <div class="profile-name ">Sudera </div>
-   
-      <div class="profile-username position-absolute bottom-0 start-50 translate-middle"><button type="button" class="btn btn-primary bottom-0 end-0">Solicitar</button></div>
- 
-    </div> 
+      <div class="background p-1 overflow-hidden rounded">
+        <div class="ContainerImg">
+          <img
+            src="https://mundokawaii.store/wp-content/uploads/2019/05/ropa-kawaii-1.jpg"
+            class="img img-responsive rounded mx-auto d-block"
+          />
+        </div>
+        <div class="position-relative">
+          <div class="profile-name ">Sudera</div>
+
+          <div
+            class="profile-username position-absolute bottom-0 start-50 translate-middle"
+          >
+            <button type="button" class="btn btn-primary bottom-0 end-0">
+              Solicitar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-  
 </template>
 
 <script>
@@ -49,10 +54,10 @@
     background-position: center;
     overflow: hidden;
     position: relative;
-    margin: 10px auto;
+    margin: 20px 10px 0px 10px;
     cursor: pointer;
     border-radius: 10px;
-    width: 220px;
+    width: 160px;
     height: 270px;
   }
 
@@ -60,7 +65,7 @@
     transition: all linear 0.25s;
     max-height: 270px;
   }
-  .background{
+  .background {
     color: #000;
     max-width: 215px;
     max-height: 265px;
@@ -85,7 +90,7 @@
     transition: all linear 0.25s;
   }
   .profile-name-div {
-  margin-bottom: 80px;
+    margin-bottom: 80px;
   }
 
   .profile-card-2 .profile-username {
@@ -115,5 +120,9 @@
 
   .profile-card-2:hover .profile-icons {
     right: 40px;
+  }
+  .ContainerImg {
+    display: flex;
+    justify-content: center;
   }
 </style>
