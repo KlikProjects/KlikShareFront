@@ -1,13 +1,22 @@
 <template>
-<div class="navbar">
-  <img class="image1" src="">
-  <img class="image2" w-10% src="">
-  <img class="image3" src="">
-</div>
+  <div class="navbar ">
+    <div class=" d-flex justify-content-between " >
+    <div>
+      <span class="iconify" data-icon="ci:hamburger" data-inline="false"></span>
+    </div>
+    <div>
+      <img class="img" src="@/assets/img/logofinal.png" alt="Logo">
+    </div>
+    <div>
+      <span class="iconify" data-icon="bx:bx-user-circle" data-inline="false"></span>
+    </div>
+   </div>
+  </div>
 
 </template>
 
 <script>
+
 export default {
   name: 'Header',
   props: {
@@ -33,12 +42,31 @@ a {
   color: #42b983;
 }
 .navbar {
-position: absolute;
 left: 0%;
 right: 0%;
 top: 0%;
-bottom: 0%;
 background: #4A483F;
-margin-bottom: 97%;
-};
+margin-bottom: 10%;
+}
+.iconify{
+  width:20%;
+  height:70%;
+  color: #A4EBF3;
+  position:relative;
+  top: 40%;
+}
+.img{
+  width:50%;
+  height:120%;
+  top: 20%;
+}
+.btn{
+  color:black;
+  
+}
+searchbar{
+width: 10px ;
+}
+
+
 </style>
