@@ -3,9 +3,8 @@
     <div class="searchspace">
       <input type="text"          
      placeholder="Search.." name="search" class="w-50 mt-0 rounded-pill">
-     <div class="searchbar">
+     
         <span class="iconify" data-icon="bx:bx-search" data-inline="false"></span>
-     </div>
     
     </div>
    <div class="buttons rounded-pill mt-2 bg-#A4EBF3">
@@ -52,11 +51,10 @@ background: #4A483F;
 margin-bottom: 10%;
 }
 .iconify{
-  width:20%;
-  height:70%;
-  color: #A4EBF3;
-  position:relative;
-  top: 40%;
+  width:40px;
+  height:80%;
+  color:  #A4EBF3;
+
 }
 .img{
   width:50%;

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-  
+  <Search></Search>
     <div class="cardContainer"  v-for="num in numbers" v-bind:key="num">
       <div class="col"><Card /></div>
     </div>
@@ -10,11 +10,13 @@
 <script>
   // @ is an alias to /src
   import Card from "@/components/Card.vue";
+  import Search from "@/components/Search.vue";
 
   export default {
     name: "Home",
     components: {
       Card,
+      Search,
     },
     data() {
       return {
