@@ -1,5 +1,10 @@
 <template>
-<h1>header</h1>
+<div class="navbar">
+  <img class="image1" src="">
+  <img class="image2" w-10% src="">
+  <img class="image3" src="">
+</div>
+
 </template>
 
 <script>
@@ -27,4 +32,13 @@ li {
 a {
   color: #42b983;
 }
+.navbar {
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+background: #4A483F;
+margin-bottom: 97%;
+};
 </style>
