@@ -1,5 +1,5 @@
 <template>
-<div class="rutas w-100">
+<div class="rutas w-100 fixed-bottom">
   <div class="d-flex  justify-content-around d-flex flex-row w-100">
     <div class="">
       <router-link to="/"><span class="iconify" data-icon="bx:bx-home" data-inline="false"></span></router-link>
@@ -51,6 +51,7 @@ a {
   background-color: #4A483F;
   font-size: 40px;
   position:fixed;
+
 }
 
 
