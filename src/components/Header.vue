@@ -1,8 +1,20 @@
 <template>
-<h1>header</h1>
+  <div class="navbar">  
+      <span class="iconify"  data-icon="ci:hamburger"  data-inline="false">
+      </span>
+    <div>
+      <img class="img" src="@/assets/img/logofinal.png" alt="Logo">
+    </div>
+      <span class="iconify" data-icon="bx:bx-user-circle" data-inline="false">
+      </span>
+  
+
+  </div>
+
 </template>
 
 <script>
+
 export default {
   name: 'Header',
   props: {
@@ -27,4 +39,34 @@ li {
 a {
   color: #42b983;
 }
+.navbar {
+background: #4A483F;
+margin-bottom: 0%;
+width: 100%;
+height:10vh;
+display:flex;
+}
+
+.iconify{
+  width:85px;
+  height:40%;
+  color: #A4EBF3;
+  position:flex-start;
+  margin-bottom: 50px;
+}
+.img{
+ height:50px;
+ margin-bottom: 50px;
+ 
+ 
+}
+.btn{
+  color:black;
+  
+}
+searchbar{
+width: 10px ;
+}
+
+
 </style>
