@@ -1,15 +1,15 @@
 <template>
-<div class="searchfield mt">
-    <div class="searchspace">
-      <input type="text"          
-     placeholder="Search.." name="search" class="w-50 mt-0 rounded-pill">
+  <div class="searchfield">
+    <input type="text"          
+     placeholder="Search.." name="search" class=" placeholder
+     w-50 mb-2 rounded-pill ">
      
-        <span class="iconify" data-icon="bx:bx-search" data-inline="false"></span>
-    
-    </div>
-   <div class="buttons rounded-pill mt-2 bg-#A4EBF3">
-      <a href="#" class=" btn btn btn-info  rounded-pill" >Ropas</a>
-      <a href="#" class=" btn btn btn-info m-1 rounded-pill" >Electronicas</a>
+      <span class="iconify" data-icon="bx:bx-search" data-inline="false">
+      </span>
+  
+    <div class="buttons">
+      <a href="#" class=" btn btn btn-info  rounded-pill" >Ropa</a>
+      <a href="#" class=" btn btn btn-info m-1 rounded-pill" >Electronica</a>
       <a href="#" class=" btn btn btn-info m-1 rounded-pill" >Muebles</a>
       <a href="#" class=" btn btn btn-info m-1 rounded-pill" >Plantas</a>
       <a href="#" class=" btn btn btn-info m-1 rounded-pill" >OrdeBy</a>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'Header',
+  name: 'Search',
   props: {
     
   }
@@ -43,31 +43,28 @@ li {
 a {
   color: #42b983;
 }
-.navbar {
-left: 0%;
-right: 0%;
-top: 0%;
-background: #4A483F;
-margin-bottom: 10%;
-}
 .iconify{
   width:40px;
   height:80%;
   color:  #A4EBF3;
-
-}
-.img{
-  width:50%;
-  height:120%;
-  top: 20%;
+  margin-bottom: 5;
 }
 .btn{
   color:black;
   
 }
-searchbar{
-width: 10px ;
+.searchfield{
+  margin-top: 20px;
+  margin-left: 0px;
+  align-items: center;
+  justify-content: center;
+  display:block;
+  
 }
+.buttons{
+  margin-top:20px;
+}
+
 
 
 </style>

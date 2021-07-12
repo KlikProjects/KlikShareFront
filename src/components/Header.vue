@@ -1,16 +1,14 @@
 <template>
-  <div class="navbar ">
-    <div class=" d-flex justify-content-between " >
-    <div>
-      <span class="iconify" data-icon="ci:hamburger" data-inline="false"></span>
-    </div>
+  <div class="navbar">  
+      <span class="iconify"  data-icon="ci:hamburger"  data-inline="false">
+      </span>
     <div>
       <img class="img" src="@/assets/img/logofinal.png" alt="Logo">
     </div>
-    <div>
-      <span class="iconify" data-icon="bx:bx-user-circle" data-inline="false"></span>
-    </div>
-   </div>
+      <span class="iconify" data-icon="bx:bx-user-circle" data-inline="false">
+      </span>
+  
+
   </div>
 
 </template>
@@ -42,23 +40,25 @@ a {
   color: #42b983;
 }
 .navbar {
-left: 0%;
-right: 0%;
-top: 0%;
 background: #4A483F;
-margin-bottom: 10%;
+margin-bottom: 0%;
+width: 100%;
+height:10vh;
+display:flex;
 }
+
 .iconify{
-  width:20%;
-  height:70%;
+  width:85px;
+  height:40%;
   color: #A4EBF3;
-  position:relative;
-  top: 40%;
+  position:flex-start;
+  margin-bottom: 50px;
 }
 .img{
-  width:50%;
-  height:120%;
-  top: 20%;
+ height:50px;
+ margin-bottom: 50px;
+ 
+ 
 }
 .btn{
   color:black;

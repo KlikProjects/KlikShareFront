@@ -52,7 +52,7 @@
   .mainContainer {
     background-color: #c4c4c4;
     overflow: scroll;
-    height: 88.5vh;
+    height: 70.5vh;
   
   }
 
