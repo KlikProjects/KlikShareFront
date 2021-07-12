@@ -5,7 +5,7 @@
       <router-link to="/"><span class="iconify" data-icon="bx:bx-home" data-inline="false"></span></router-link>
     </div>
     <div class="">
-      <router-link to="/gifts"><span class="iconify" data-icon="ion:gift-outline" data-inline="false"></span></router-link>
+      <router-link to="/Gifts"><span class="iconify" data-icon="ion:gift-outline" data-inline="false"></span></router-link>
     </div>
     <div class=" plus">
       <router-link to="/create"><span class="iconify" data-icon="ant-design:plus-circle-outlined" data-inline="false"></span></router-link>
