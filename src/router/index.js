@@ -26,6 +26,11 @@ const routes = [
     path: '/infoCard',
     name: 'infoCard',
     component: () => import('../views/InfoCard.vue')
+  },
+  {
+    path: '/userProfile',
+    name: 'userProfile',
+    component: () => import('../views/userProfile.vue')
   }
 ]
 
