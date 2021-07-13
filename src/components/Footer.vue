@@ -8,7 +8,7 @@
       <router-link to="/Gifts"><span class="iconify" data-icon="ion:gift-outline" data-inline="false"></span></router-link>
     </div>
     <div class=" plus">
-      <router-link to="/create"><span class="iconify" data-icon="ant-design:plus-circle-outlined" data-inline="false"></span></router-link>
+      <router-link to="/CreateProduct"><span class="iconify" data-icon="ant-design:plus-circle-outlined" data-inline="false"></span></router-link>
     </div>
     <div class="">
       <router-link to="/maps"><span class="iconify" data-icon="mdi:google-maps" data-inline="false"></span></router-link>

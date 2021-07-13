@@ -11,8 +11,11 @@
     <div>
       <img class="img" src="@/assets/img/logofinal.png" alt="Logo" />
     </div>
-    <span class="iconify" data-icon="bx:bx-user-circle" data-inline="false">
-    </span>
+      
+      <span class="iconify" data-icon="bx:bx-user-circle" data-inline="false">
+      </span>
+  
+
   </div>
 </template>
 

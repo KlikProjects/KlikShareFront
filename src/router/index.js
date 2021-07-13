@@ -26,7 +26,20 @@ const routes = [
     path: '/infoCard',
     name: 'infoCard',
     component: () => import('../views/InfoCard.vue')
+  },
+  {
+    path: '/CreateProduct',
+    name: 'CreateProduct',
+    component: () => import('../views/CreateProduct.vue')
+  },
+  {
+    path: '/Chat',
+    name: 'Chat',
+    component: () => import('../views/Chat.vue')
   }
+
+
+
 ]
 
 const router = createRouter({
