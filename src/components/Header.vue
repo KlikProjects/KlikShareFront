@@ -1,6 +1,13 @@
 <template>
   <div class="navbar sticky-top">
-    <span class="iconify" data-icon="ci:hamburger" data-inline="false"> </span>
+    <div class="d-flex align-items-start flex-column mb-4">
+    <router-link to="/signup">
+      <button class="enterButtons" type="submit">Sign Up</button>
+    </router-link>
+    <router-link to="/login">
+      <button class="enterButtons" type="submit">Login</button>
+    </router-link>
+  </div>
     <div>
       <img class="img" src="@/assets/img/logofinal.png" alt="Logo" />
     </div>
@@ -56,4 +63,10 @@ a {
 searchbar {
   width: 10px;
 }
+.enterButtons {
+  background-color: #4a483f;
+  color: #a4ebf3;
+  border: #a4ebf3;
+}
+
 </style>
