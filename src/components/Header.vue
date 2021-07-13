@@ -1,6 +1,6 @@
 <template>
   <div class="navbar sticky-top">
-    <div class="d-flex align-items-start flex-column mb-4">
+    <div class="d-flex align-items-start flex-column mb-5">
     <router-link to="/signup">
       <button class="enterButtons" type="submit">Sign Up</button>
     </router-link>

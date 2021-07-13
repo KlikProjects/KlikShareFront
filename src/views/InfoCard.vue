@@ -5,6 +5,7 @@
         <p class="m-3">Descripccion</p>
         <p>Talla</p>
         <p>Más detalles</p>
+        <button class="exitbtn m-3" @click="goProfile">Dueño</button>
         <button @click="goBack" type="button" class="exitbtn">Volver</button>
     </div>
 </template>
@@ -18,6 +19,9 @@ export default {
     methods: {
         goBack() {
             this.$router.push('/')
+        },
+        goProfile(){
+            this.$router.push('/userProfile')
         }
     }
 }
@@ -32,7 +36,7 @@ export default {
 .cardInfo {
     margin-right: 25%;
     margin-left: 25%;
-    margin-top: 20%;
-    margin-bottom: 30%;
+    margin-top: 10%;
+    margin-bottom: 31%;
 }
 </style>
