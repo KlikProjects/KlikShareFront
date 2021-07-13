@@ -1,10 +1,10 @@
 <template>
     <div class="cardInfo">
         <h4>Nombre producto</h4>
-        <p>Descripccion</p>
+        <Card />
+        <p class="m-3">Descripccion</p>
         <p>Talla</p>
         <p>Más detalles</p>
-        <Card />
         <button @click="goBack" type="button" class="exitbtn">Volver</button>
     </div>
 </template>
@@ -33,6 +33,6 @@ export default {
     margin-right: 25%;
     margin-left: 25%;
     margin-top: 20%;
-    margin-bottom: 50%;
+    margin-bottom: 30%;
 }
 </style>
