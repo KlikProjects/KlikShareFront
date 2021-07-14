@@ -7,7 +7,7 @@
     </div>
     <div class="home">
       <div class="cardContainer" v-for="product in products" v-bind:key="product">
-        <div class="col"><Card /></div>
+        <div class="col" :product="product"><Card /></div>
       </div>
     </div>
   </div>
@@ -36,11 +36,13 @@ export default {
   },
 
   methods: {
-    getAllProducts(){
-      apiService.getProducts().then((response)=>{this.products = responde.data})
+    async getAllProducts() {
+        apiService.getProducts().then((response) => {
+          this.products = response.data})
+       }
     }
-  },
-};
+
+}
 </script>
 
 <style>
