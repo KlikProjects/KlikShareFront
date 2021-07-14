@@ -4,12 +4,12 @@
       <div class="background p-1 overflow-hidden rounded">
         <div class="ContainerImg">
           <img
-            src="https://mundokawaii.store/wp-content/uploads/2019/05/ropa-kawaii-1.jpg"
+           :src="product.image"
             class="img img-responsive rounded mx-auto d-block"
-          />
-        </div>
+           v-bind:key="product.image"/>
+          </div>
         <div class="position-relative">
-          <div class="profile-name ">Sudera</div>
+          <div class="profile-name "><h3>{{product.title}}</h3></div>
 
           <div
             class="profile-username position-absolute bottom-0 start-50 translate-middle"
@@ -31,7 +31,7 @@ import {apiService} from "@/services/apiService";
 
   export default {
     name: "Card",
-    props: {},
+    props: ['product'],
   };
 </script>
 

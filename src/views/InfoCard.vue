@@ -23,6 +23,7 @@ export default {
         goProfile(){
             this.$router.push('/userProfile')
         }
+        
     }
 }
 </script>

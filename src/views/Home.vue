@@ -7,7 +7,7 @@
     </div>
     <div class="home">
       <div class="cardContainer" v-for="product in products" v-bind:key="product">
-        <div class="col" :product="product"><Card /></div>
+        <div class="col"><Card :product="product" /></div>
       </div>
     </div>
   </div>
