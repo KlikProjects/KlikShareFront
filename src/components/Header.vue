@@ -12,7 +12,7 @@
       <img class="img" src="@/assets/img/logofinal.png" alt="Logo" />
     </div>
       
-     <router-link to="/UserProfile"><span class="iconify" data-icon="bx:bx-user-circle" data-inline="false">
+     <router-link to="/Profile"><span class="iconify" data-icon="bx:bx-user-circle" data-inline="false">
       </span></router-link>
   
 

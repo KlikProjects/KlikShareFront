@@ -12,6 +12,7 @@
   <footer>
     <Footer />
   </footer>
+</div>
 </template>
 <script>
 // @ is an alias to /src
