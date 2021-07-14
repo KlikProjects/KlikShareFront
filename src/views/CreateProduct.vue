@@ -34,6 +34,7 @@ width: 200px;
 .calender{
   width:210px;
   height:33px;
+  margin-bottom: 97%;
 }
 .iconify{
   height:50px;

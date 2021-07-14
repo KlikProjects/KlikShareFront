@@ -51,15 +51,15 @@ a {
 
 .iconify {
   width: 85px;
-  height: 40%;
+  height: 50px;
   color: #a4ebf3;
   position: flex-start;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   margin: px;
 }
 .img {
-  height: 50px;
-  margin-bottom: 50px;
+  height: 65px;
+  margin-bottom: 35px;
 }
 .btn {
   color: black;
