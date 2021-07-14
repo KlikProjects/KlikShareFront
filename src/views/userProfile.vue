@@ -41,7 +41,3 @@ export default {
   margin-top: 20%;
 }
 </style>
-
-
-
-
