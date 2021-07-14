@@ -1,13 +1,14 @@
 <template>
-  <div class="navbar">  
+  <div class="navbar d-flex justify-content-md-between">  
       <span class="iconify"  data-icon="ci:hamburger"  data-inline="false">
       </span>
     <div>
-      <img class="img" src="@/assets/img/logofinal.png" alt="Logo">
+      <router-link to="/"><img class="img" src="@/assets/img/logofinal.png" alt="Logo">
+      </router-link>
     </div>
       
-      <span class="iconify" data-icon="bx:bx-user-circle" data-inline="false">
-      </span>
+     <router-link to="/UserProfile"><span class="iconify" data-icon="bx:bx-user-circle" data-inline="false">
+      </span></router-link>
   
 
   </div>
@@ -46,18 +47,20 @@ margin-bottom: 0%;
 width: 100%;
 height:10vh;
 display:flex;
+
 }
 
 .iconify{
-  width:85px;
+  width:50px;
   height:40%;
   color: #A4EBF3;
   position:flex-start;
   margin-bottom: 50px;
+  margin: px;
 }
 .img{
  height:50px;
- margin-bottom: 50px;
+ margin-bottom: 70px;
  
  
 }
@@ -67,6 +70,10 @@ display:flex;
 }
 searchbar{
 width: 10px ;
+}
+.iconify:hover{
+  color:#42b983;
+  font-size:scale 10px;
 }
 
 

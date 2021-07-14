@@ -21,10 +21,12 @@ const routes = [
     path: '/Chat',
     name: 'Chat',
     component: () => import('../views/Chat.vue')
-  }
-
-
-
+  },
+{
+  path: '/UserProfile',
+  name: 'UserProfile',
+  component: () => import('../views/UserProfile.vue')
+}
 ]
 
 const router = createRouter({

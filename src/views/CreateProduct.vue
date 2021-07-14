@@ -1,5 +1,6 @@
 <template>
-    <div class="float-start">
+  <div>
+    <div class="arrow float-start">
       <router-link to="/"><span class="iconify" data-icon="eva:arrow-back-outline" data-inline="false"></span></router-link>
     </div>
   <form class="create d-flex align-items-center flex-column  mt-1">
@@ -14,7 +15,7 @@
        name="meeting-time" value="2021-06-12T19:30"
        min="2021-06-07T00:00" max="2021-14T00:00">
   </form>
- 
+  </div>
 </template>
 
 <script>
@@ -34,6 +35,12 @@ width: 200px;
   width:210px;
   height:33px;
 }
-
+.iconify{
+  height:50px;
+}
+.arrow{
+  width:50px;
+  height:50px;
+}
 
 </style>

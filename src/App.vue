@@ -1,4 +1,5 @@
 <template>
+<div>
   <header>
   <Header/>
   </header>
@@ -12,7 +13,7 @@
   <Footer/>
   </footer>
 
-  
+  </div>
 </template>
 <script>
   // @ is an alias to /src
