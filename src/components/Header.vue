@@ -11,9 +11,10 @@
     <div>
       <img class="img" src="@/assets/img/logofinal.png" alt="Logo" />
     </div>
-      
+      <router-link to="/Profile">
       <span class="iconify" data-icon="bx:bx-user-circle" data-inline="false">
       </span>
+      </router-link>
   
 
   </div>
@@ -50,14 +51,14 @@ a {
 }
 
 .iconify {
-  width: 85px;
+  width: 50px;
   height: 40%;
   color: #a4ebf3;
   position: flex-start;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
 }
 .img {
-  height: 50px;
+  height: 60px;
   margin-bottom: 50px;
 }
 .btn {
