@@ -1,10 +1,15 @@
 <template>
-  <div class="navbar d-flex justify-content-md-between">  
-      <span class="iconify"  data-icon="ci:hamburger"  data-inline="false">
-      </span>
+  <div class="navbar sticky-top">
+    <div class="d-flex align-items-start flex-column mb-5">
+    <router-link to="/signup">
+      <button class="enterButtons" type="submit">Sign Up</button>
+    </router-link>
+    <router-link to="/login">
+      <button class="enterButtons" type="submit">Login</button>
+    </router-link>
+  </div>
     <div>
-      <router-link to="/"><img class="img" src="@/assets/img/logofinal.png" alt="Logo">
-      </router-link>
+      <img class="img" src="@/assets/img/logofinal.png" alt="Logo" />
     </div>
       
      <router-link to="/UserProfile"><span class="iconify" data-icon="bx:bx-user-circle" data-inline="false">
@@ -12,17 +17,13 @@
   
 
   </div>
-
 </template>
 
 <script>
-
 export default {
-  name: 'Header',
-  props: {
-    
-  }
-}
+  name: "Header",
+  props: {},
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -42,39 +43,34 @@ a {
   color: #42b983;
 }
 .navbar {
-background: #4A483F;
-margin-bottom: 0%;
-width: 100%;
-height:10vh;
-display:flex;
-
+  background: #4a483f;
+  width: 100%;
+  height: 10vh;
+  display: flex;
 }
 
-.iconify{
-  width:50px;
-  height:40%;
-  color: #A4EBF3;
-  position:flex-start;
+.iconify {
+  width: 85px;
+  height: 40%;
+  color: #a4ebf3;
+  position: flex-start;
   margin-bottom: 50px;
   margin: px;
 }
-.img{
- height:50px;
- margin-bottom: 70px;
- 
- 
+.img {
+  height: 50px;
+  margin-bottom: 50px;
 }
-.btn{
-  color:black;
-  
+.btn {
+  color: black;
 }
-searchbar{
-width: 10px ;
+searchbar {
+  width: 10px;
 }
-.iconify:hover{
-  color:#42b983;
-  font-size:scale 10px;
+.enterButtons {
+  background-color: #4a483f;
+  color: #a4ebf3;
+  border: #a4ebf3;
 }
-
 
 </style>

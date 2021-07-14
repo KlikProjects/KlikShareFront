@@ -14,9 +14,11 @@
           <div
             class="profile-username position-absolute bottom-0 start-50 translate-middle"
           >
-            <button type="button" class="btn btn-primary bottom-0 end-0">
-              Solicitar
+          <router-link to="/infoCard">
+            <button type="button" class="InfoButton">
+              Info
             </button>
+          </router-link>
           </div>
         </div>
       </div>
@@ -124,5 +126,11 @@
   .ContainerImg {
     display: flex;
     justify-content: center;
+  }
+  .InfoButton{
+    background-color: #4a483f;
+    color: #a4ebf3;
+    border-radius: 40%;
+    width: 50px;
   }
 </style>

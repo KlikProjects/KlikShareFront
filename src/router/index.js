@@ -13,6 +13,21 @@ const routes = [
     component: () => import('../views/Gifts.vue')
   },
   {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/Login.vue')
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: () => import('../views/SignUp.vue')
+  },
+  {
+    path: '/infoCard',
+    name: 'infoCard',
+    component: () => import('../views/InfoCard.vue')
+  },
+  {
     path: '/CreateProduct',
     name: 'CreateProduct',
     component: () => import('../views/CreateProduct.vue')
@@ -22,11 +37,14 @@ const routes = [
     name: 'Chat',
     component: () => import('../views/Chat.vue')
   },
-{
-  path: '/UserProfile',
-  name: 'UserProfile',
-  component: () => import('../views/UserProfile.vue')
-}
+  {
+    path: '/userProfile',
+    name: 'userProfile',
+    component: () => import('../views/userProfile.vue')
+  }
+    
+    
+    
 ]
 
 const router = createRouter({
