@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="home">
-      <div class="cardContainer" v-for="num in numbers" v-bind:key="num">
+      <div class="cardContainer" v-for="product in products" v-bind:key="product">
         <div class="col"><Card /></div>
       </div>
     </div>
@@ -17,6 +17,7 @@
 // @ is an alias to /src
 import Card from "@/components/Card.vue";
 import Search from "@/components/Search.vue";
+import {apiService} from "../services/apiService";
 
 export default {
   name: "Home",
@@ -26,8 +27,18 @@ export default {
   },
   data() {
     return {
-      numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      products: [],
     };
+  },
+
+  mounted() {
+      this.getAllProducts()
+  },
+
+  methods: {
+    getAllProducts(){
+      apiService.getProducts().then((response)=>{this.products = responde.data})
+    }
   },
 };
 </script>
