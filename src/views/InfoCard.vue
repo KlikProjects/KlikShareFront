@@ -1,10 +1,17 @@
 <template>
-  <div class="cardInfo" >
-    <p>{{ id }}</p>
+  <div class="cardInfo">
     <p class="m-3">{{ product.title }}</p>
-    <p>Talla</p>
-    <p>Más detalles</p>
-    <button class="exitbtn m-3" @click="getProductInfo(id)">info</button>
+    <p>{{ product.description }}</p>
+    <div>
+      <img
+        :src="product.image"
+        class="rounded float-start"
+        v-bind:key="product.image"
+      />
+    </div>
+    <p>{{ product.description }}</p>
+
+    <button class="exitbtn m-3" @click="goProfile()">Perfil</button>
     <button @click="goBack" type="button" class="exitbtn">Volver</button>
   </div>
 </template>
@@ -14,7 +21,7 @@
   export default {
     data() {
       return {
-        product:[],
+        product: [],
         id: this.$route.params.id,
       };
     },
@@ -22,15 +29,15 @@
     components: {
       Card,
     },
-    preMount() {
-      this.getProductInfo();
+    beforeMount() {
+      this.getProductInfo(this.id);
     },
     methods: {
       getProductInfo(id) {
         apiService.getProduct(id).then((response) => {
           this.product = response.data;
         });
-        console.log(id)
+        console.log(id);
       },
       goBack() {
         this.$router.push("/");
