@@ -16,9 +16,7 @@
           >
           <router-link :to="{name:'infoCard',
           params:{id:product.id}}">
-            <button type="button" class="InfoButton">
-              Info
-            </button>
+            <button type="button" class="InfoButton">Info</button>
           </router-link>
           </div>
         </div>
@@ -40,6 +38,7 @@ import {apiService} from "@/services/apiService";
 <style scoped>
   h3 {
     margin: 40px 0 0;
+    font-size: 18px;
   }
   ul {
     list-style-type: none;
@@ -64,6 +63,11 @@ import {apiService} from "@/services/apiService";
     border-radius: 10px;
     width: 160px;
     height: 270px;
+    display: flex;
+justify-content: center;
+align-content: ;
+align-items: center;
+
   }
 
   .profile-card-2 img {
@@ -85,6 +89,9 @@ import {apiService} from "@/services/apiService";
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     font-weight: bold;
     transition: all linear 0.25s;
+    left: 10%;
+width: 80%;
+height: auto;
   }
 
   .profile-card-2 .profile-icons {
@@ -129,11 +136,18 @@ import {apiService} from "@/services/apiService";
   .ContainerImg {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 140px;
   }
   .InfoButton{
-    background-color: #4a483f;
-    color: #a4ebf3;
-    border-radius: 40%;
-    width: 50px;
-  }
+  background-color: #4a483f;
+  color: #a4ebf3;
+  border-radius: 20px;
+  width: 120px;
+  height: 24px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
