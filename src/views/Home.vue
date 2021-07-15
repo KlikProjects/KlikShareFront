@@ -2,7 +2,7 @@
   <div class="contenido">
     <div class="header">
       <div class="headerContainer">
-        <Search />
+       <!--<Search /> -->
       </div>
     </div>
     <div class="home">
@@ -51,6 +51,7 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  height: ;
 }
 
 .headerContainer {

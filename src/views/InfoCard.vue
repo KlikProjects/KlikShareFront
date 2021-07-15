@@ -39,5 +39,6 @@ export default {
     margin-left: 25%;
     margin-top: 10%;
     margin-bottom: 31%;
+    height:70vh;
 }
 </style>
