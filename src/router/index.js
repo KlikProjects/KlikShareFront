@@ -23,7 +23,7 @@ const routes = [
     component: () => import('../views/SignUp.vue')
   },
   {
-    path: '/infoCard',
+    path: '/infoCard/:id',
     name: 'infoCard',
     component: () => import('../views/InfoCard.vue')
   },

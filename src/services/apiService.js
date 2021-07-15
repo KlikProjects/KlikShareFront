@@ -16,7 +16,7 @@ export const apiService = {
         return axios.put(baseUrl + '/product/' + id, data)
     },
 
-    deleteProduct(){
+    deleteProduct(id){
         return axios.delete(baseUrl + '/product/' + id)
     },
 }

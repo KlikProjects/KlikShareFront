@@ -1,6 +1,6 @@
 <template>
     <div class="cardInfo">
-        <h4>Nombre producto</h4>
+        <h4>{{product.name}}</h4>
         <Card />
         <p class="m-3">Descripccion</p>
         <p>Talla</p>
@@ -12,11 +12,23 @@
 <script>
 import Card from "@/components/Card.vue";
 export default {
+    data(){
+        return {
+           productID : this.$route.params.id}
+    },
     name: "card",
     components: {
         Card
     },
+    computed:{
+        destination(){
+
+        }
+    },
     methods: {
+
+        
+
         goBack() {
             this.$router.push('/')
         },
@@ -39,6 +51,6 @@ export default {
     margin-left: 25%;
     margin-top: 10%;
     margin-bottom: 31%;
-    height:70vh;
+    height:80vh;
 }
 </style>

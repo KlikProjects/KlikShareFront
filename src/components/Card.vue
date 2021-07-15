@@ -14,7 +14,8 @@
           <div
             class="profile-username position-absolute bottom-0 start-50 translate-middle"
           >
-          <router-link to="/infoCard">
+          <router-link :to="{name:'infoCard',
+          params:{id:product.id}}">
             <button type="button" class="InfoButton">
               Info
             </button>

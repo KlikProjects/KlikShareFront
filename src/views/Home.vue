@@ -51,7 +51,7 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  height: ;
+  height:85vh;
 }
 
 .headerContainer {
