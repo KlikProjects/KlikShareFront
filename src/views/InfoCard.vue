@@ -11,24 +11,25 @@
 </template>
 <script>
 import Card from "@/components/Card.vue";
+import apiService from "..//services/apiService";
 export default {
     data(){
         return {
-           productID : this.$route.params.id}
+        productID : this.$route.params.id,
+        product:[]
+        }
     },
     name: "card",
     components: {
         Card
     },
-    computed:{
-        destination(){
+    
 
-        }
-    },
     methods: {
 
-        
-
+        getProductInfo(productID){
+            apiService.getProduct(productID).then((response)=>{this.product =response.data})
+        },
         goBack() {
             this.$router.push('/')
         },

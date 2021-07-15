@@ -4,9 +4,9 @@
       <div class="background p-1 overflow-hidden rounded">
         <div class="ContainerImg">
           <img
-           :src="product.image"
+          :src="product.image"
             class="img img-responsive rounded mx-auto d-block"
-           v-bind:key="product.image"/>
+          v-bind:key="product.image"/>
           </div>
         <div class="position-relative">
           <div class="profile-name "><h3>{{product.title}}</h3></div>
