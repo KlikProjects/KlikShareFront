@@ -1,4 +1,5 @@
 <template>
+<div class="main body ">
     <div class="float-start">
       <router-link to="/"><span class="iconify" data-icon="eva:arrow-back-outline" data-inline="false"></span></router-link>
     </div>
@@ -14,6 +15,7 @@
        name="meeting-time" value="2021-06-12T19:30"
        min="2021-06-07T00:00" max="2021-14T00:00">
   </form>
+  </div>
  
 </template>
 
