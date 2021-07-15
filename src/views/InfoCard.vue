@@ -1,57 +1,58 @@
 <template>
-    <div class="cardInfo">
-        <h4>{{product.name}}</h4>
-        <Card />
-        <p class="m-3">Descripccion</p>
-        <p>Talla</p>
-        <p>Más detalles</p>
-        <button class="exitbtn m-3" @click="goProfile">Dueño</button>
-        <button @click="goBack" type="button" class="exitbtn">Volver</button>
-    </div>
+  <div class="cardInfo" >
+    <p>{{ id }}</p>
+    <p class="m-3">{{ product.title }}</p>
+    <p>Talla</p>
+    <p>Más detalles</p>
+    <button class="exitbtn m-3" @click="getProductInfo(id)">info</button>
+    <button @click="goBack" type="button" class="exitbtn">Volver</button>
+  </div>
 </template>
 <script>
-import Card from "@/components/Card.vue";
-import apiService from "..//services/apiService";
-export default {
-    data(){
-        return {
-        productID : this.$route.params.id,
-        product:[]
-        }
+  import Card from "..//components/Card.vue";
+  import { apiService } from "..//services/apiService.js";
+  export default {
+    data() {
+      return {
+        product:[],
+        id: this.$route.params.id,
+      };
     },
-    name: "card",
+    name: "infoCard",
     components: {
-        Card
+      Card,
     },
-    
-
+    preMount() {
+      this.getProductInfo();
+    },
     methods: {
-
-        getProductInfo(productID){
-            apiService.getProduct(productID).then((response)=>{this.product =response.data})
-        },
-        goBack() {
-            this.$router.push('/')
-        },
-        goProfile(){
-            this.$router.push('/userProfile')
-        }
-        
-    }
-}
+      getProductInfo(id) {
+        apiService.getProduct(id).then((response) => {
+          this.product = response.data;
+        });
+        console.log(id)
+      },
+      goBack() {
+        this.$router.push("/");
+      },
+      goProfile() {
+        this.$router.push("/userProfile");
+      },
+    },
+  };
 </script>
 <style scoped>
-.exitbtn{
-    background-color:#4A483F;
-    color: #A4EBF3;
+  .exitbtn {
+    background-color: #4a483f;
+    color: #a4ebf3;
     border-radius: 50%;
     margin-top: 20%;
-}
-.cardInfo {
+  }
+  .cardInfo {
     margin-right: 25%;
     margin-left: 25%;
     margin-top: 10%;
     margin-bottom: 31%;
-    height:80vh;
-}
+    height: vh;
+  }
 </style>
