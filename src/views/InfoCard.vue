@@ -9,8 +9,6 @@
         v-bind:key="product.image"
       />
     </div>
-    <p>{{ product.description }}</p>
-
     <button class="exitbtn m-3" @click="goProfile()">Perfil</button>
     <button @click="goBack" type="button" class="exitbtn">Volver</button>
   </div>
