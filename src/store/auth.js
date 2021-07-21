@@ -31,7 +31,8 @@ export default {
 
           commit('SET_USER', response.data)
         }catch(e){
-          console.log('tamalito')
+          commit('SET_USER', null)
+          commit('SET_TOKEN', null)
         }
         
       }
