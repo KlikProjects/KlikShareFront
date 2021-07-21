@@ -1,23 +1,44 @@
 <template>
 <div class="formulario">
-    <form action="">
-        <label for="name"></label>
-        <input type="text" placeholder="Name" id="name" required>
-        <label for="lastname"></label>
-        <input type="text" placeholder="LastName" id="lastname" required>
-        <label for="email"></label>
-        <input type="email" name="" id="email" placeholder="Email" required>
-        <input class="profileImg" type="file" placeholder="Your Profile Image" id="image"><br>
-        <label for="image"></label>
-        <input type="text" placeholder="Profile Image">
-        <label for="user">User:</label>
-        <input type="text" v-model="user" placeholder="Name of user" id="user" required>
+    <form @submit.prevent="submitRegister">
+        <label for="name">Name</label>
+        <input type="text"  id="name" v-model="form.name">
+        <label for="email">Email</label>
+        <input type="email" name="" id="email" v-model="form.email">
+    
         <label for="password">Password:</label>
-        <input type="password" id="password" required>
+        <input type="password" id="password" name="password" v-model="form.password">
+        <label for="password">Confirm Password:</label>
+        <input type="password" id="c_password" name="c_password" v-model="form.c_password">
         <button type="submit" class="loginbtn">Login</button>
     </form>
 </div>
 </template>
+
+<script>
+ import { authService } from "..//services/authService";
+ export default {
+    name: "SingUp",
+    data() {
+      return {
+        form: {
+            name:'',
+            email: '',
+            password: '',
+            c_password: '',
+        },
+      };
+    },
+    methods: {
+      async submitRegister() {
+        let response = authService.getRegister(this.form)
+        }
+      
+         
+      },
+    }
+
+</script>
 
 <style scoped>
 

@@ -1,29 +1,51 @@
 <template>
-<div class="formulario">
-    <form action="">
-        <label for="user">User:</label>
-        <input type="text" v-model="user" placeholder="Name of user" id="user">
-        <label for="password">Password:</label>
-        <input type="password" id="password">
-        <button class="loginbtn">Login</button>
-    </form>
-</div>
-</template>
+  <div class="formulario">
+    <form @submit.prevent="submitLogin()">
 
+      <label for="email">Email:</label>
+      <input type="text" name="email" id="email" v-model="form.email" />
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" v-model="form.password" />
+      <button class="loginbtn" type="submit">Login</button>
+    </form>
+  </div>
+</template>
+<script>
+ import { authService } from "..//services/authService";
+ export default {
+    name: "Login",
+    data() {
+      return {
+        form: {
+          email: '',
+          password: '',
+        },
+      };
+    },
+    methods: {
+      async submitLogin() {
+        let response = authService.getLogin(this.form)
+        }
+      
+         
+      },
+    }
+
+</script>
 <style scoped>
-.formulario {
+  .formulario {
     align-items: center;
     display: flex;
-    margin-top:60%;
+    margin-top: 60%;
     margin-bottom: 65%;
     font-size: 25px;
     font-family: cursive;
-    color: #4A483F;
-}
+    color: #4a483f;
+  }
 
-.loginbtn{
-    background-color:#4A483F;
-    color: #A4EBF3;
+  .loginbtn {
+    background-color: #4a483f;
+    color: #a4ebf3;
     border-radius: 50%;
-}
+  }
 </style>
