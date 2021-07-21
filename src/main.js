@@ -5,6 +5,9 @@ import store from './store'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+require('..//src/store/subscriber')
+
+store.dispatch('auth/attempt', localStorage.getItem('token'))
 
 const app = createApp(App)
 app.use(store)

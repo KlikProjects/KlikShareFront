@@ -27,11 +27,8 @@ import {mapActions} from 'vuex'
             LogIn: 'auth/LogIn'
         }),
       async submitLogin() {
-          this.LogIn(this.form).then(()=>{
-            this.$router.push("/")
-          }).catch(()
-          =>{console.log("error mi paNA")})
-           
+          this.LogIn(this.form)
+           this.$router.push("/");
         }
       
          
