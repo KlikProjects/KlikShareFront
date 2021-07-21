@@ -10,12 +10,14 @@ export default {
   },
   mutations: {},
   actions: {
-      async LogIn(_,credentials){
-        var response = await authService.getLogin(credentials)
-        console.log(response.data)
-      },
-      async attempt({commit}, token){
+      async LogIn({ dispatch },credentials){
+        let response = await authService.getLogin(credentials)
+       
 
+        dispatch('attempt', response.data.data.token)
+      },
+      async attempt(_, token){
+        console.log(token)
       }
   },
 
