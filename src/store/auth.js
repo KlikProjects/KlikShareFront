@@ -8,7 +8,14 @@ export default {
       token: null,
       user:null,
   },
-  mutations: {},
+  mutations: {
+    SET_TOKEN (state, token){
+      state.token = token;
+    },
+    SET_USER (state, data){
+      state.user = data;
+    }
+  },
   actions: {
       async LogIn({ dispatch },credentials){
         let response = await authService.getLogin(credentials)
@@ -16,8 +23,17 @@ export default {
 
         dispatch('attempt', response.data.data.token)
       },
-      async attempt(_, token){
-        console.log(token)
+      async attempt({commit}, token){
+        commit('SET_TOKEN', token)
+
+        try {
+          let response = await authService.getUser(token)
+
+          commit('SET_USER', response.data)
+        }catch(e){
+          console.log('tamalito')
+        }
+        
       }
   },
 

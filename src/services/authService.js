@@ -9,4 +9,9 @@ export const authService = {
     getRegister(data){
         return axios.post(baseUrl + '/register', data)
      },
+   getUser(token){
+      return axios.get(baseUrl + '/user', {
+         headers: { 'Authorization': 'Bearer ' + token },
+      })
+   }
 } 
