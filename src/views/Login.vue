@@ -27,7 +27,11 @@ import {mapActions} from 'vuex'
             LogIn: 'auth/LogIn'
         }),
       async submitLogin() {
-          this.LogIn(this.form)
+          this.LogIn(this.form).then(()=>{
+            this.$router.push("/")
+          }).catch(()
+          =>{console.log("error mi paNA")})
+           
         }
       
          
@@ -37,13 +41,13 @@ import {mapActions} from 'vuex'
 </script>
 <style scoped>
   .formulario {
-    align-items: center;
-    display: flex;
-    margin-top: 60%;
-    margin-bottom: 65%;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
     font-size: 25px;
     font-family: cursive;
     color: #4a483f;
+    height:95vh;
   }
 
   .loginbtn {
