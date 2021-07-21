@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
- import { authService } from "..//services/authService";
+import {mapActions} from 'vuex'
  export default {
     name: "Login",
     data() {
@@ -23,8 +23,11 @@
       };
     },
     methods: {
+        ...mapActions({
+            LogIn: 'auth/LogIn'
+        }),
       async submitLogin() {
-        let response = authService.getLogin(this.form)
+          this.LogIn(this.form)
         }
       
          
