@@ -42,7 +42,6 @@
       logOut(){
         this.logOutAction().then(()=>{
           this.$router.push("/")
-          console.log('hola')
         })
       }
 

@@ -50,12 +50,11 @@ export default {
         commit("SET_TOKEN", null);
       }
     },
-    logOut({commit}){
+    logOut({ commit }) {
       return authService.getLogedOut().then(() => {
         commit("SET_USER", null);
         commit("SET_TOKEN", null);
-      })
-
-    }
+      });
+    },
   },
 };
