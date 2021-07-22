@@ -9,9 +9,10 @@ export const authService = {
     getRegister(data){
         return axios.post(baseUrl + '/register', data)
      },
-   getUser(token){
-      return axios.get(baseUrl + '/user', {
-         headers: { 'Authorization': 'Bearer ' + token },
-      })
+   getUser(){
+      return axios.get(baseUrl + '/user')
+   },
+   getLogedOut(){
+      return axios.post(baseUrl + '/logout') 
    }
 } 

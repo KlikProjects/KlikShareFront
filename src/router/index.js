@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import store from '..//store'
 
 const routes = [
   {
@@ -30,7 +31,16 @@ const routes = [
   {
     path: '/CreateProduct',
     name: 'CreateProduct',
-    component: () => import('../views/CreateProduct.vue')
+    component: () => import('../views/CreateProduct.vue'),
+    beforeEnter: (to, from, next) => {
+      if(!store.getters['auth/authenticated']){
+        return next({
+          name: 'login'
+        })
+
+      }
+      
+    }
   },
   {
     path: '/Chat',

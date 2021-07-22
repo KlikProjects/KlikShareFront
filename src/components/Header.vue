@@ -10,7 +10,7 @@
         </router-link>
       </template>
       <template v-if="authenticated">
-        <button class="enterButtons" type="submit">Logout</button>
+        <button class="Button" @click.prevent="logOut">Logout</button>
       </template>
     </div>
     <div>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  import { mapGetters } from "vuex";
+  import { mapGetters, mapActions } from "vuex";
   export default {
     name: "Header",
     computed: {
@@ -35,6 +35,18 @@
         user: "auth/user",
       }),
     },
+    methods:{
+      ...mapActions({
+        logOutAction: 'auth/logOut'
+      }),
+      logOut(){
+        this.logOutAction().then(()=>{
+          this.$router.push("/")
+          console.log('hola')
+        })
+      }
+
+    }
   };
 </script>
 
