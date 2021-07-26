@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import store from '..//store'
 
 const routes = [{
         path: '/',
@@ -25,7 +26,7 @@ const routes = [{
             import ('../views/SignUp.vue')
     },
     {
-        path: '/infoCard',
+        path: '/infoCard/:id',
         name: 'infoCard',
         component: () =>
             import ('../views/InfoCard.vue')
@@ -34,7 +35,16 @@ const routes = [{
         path: '/CreateProduct',
         name: 'CreateProduct',
         component: () =>
-            import ('../views/CreateProduct.vue')
+            import ('../views/CreateProduct.vue'),
+        beforeEnter: (to, from, next) => {
+            if (!store.getters['auth/authenticated']) {
+                return next({
+                    name: 'login'
+                })
+
+            }
+
+        }
     },
     {
         path: '/Chat',
@@ -54,6 +64,9 @@ const routes = [{
         component: () =>
             import ('../views/Profile.vue')
     }
+
+
+
 ]
 
 const router = createRouter({

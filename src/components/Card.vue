@@ -2,10 +2,10 @@
   <div class="ct-cards">
     <div class="ct-card">
       <div class="ct-img">
-        <img src="https://mundokawaii.store/wp-content/uploads/2019/05/ropa-kawaii-1.jpg" alt="product" class="cardImg">
+        <img :src="product.image" alt="product" class="cardImg" v-bind:key="product.image"/>
       </div>
-      <p class="txt-card">Sudadera</p> 
-      <router-link to="/infoCard"> 
+      <p class="txt-card">{{product.title}}</p> 
+      <router-link :to="{name:'infoCard', params:{id:product.id}}"> 
         <button class="bt-card">Más información</button>
       </router-link>
     </div>
@@ -15,7 +15,7 @@
 <script>
   export default {
     name: "Card",
-    props: {},
+    props: ['product'],
   };
 </script>
 
