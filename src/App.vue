@@ -52,5 +52,11 @@ export default {
   overflow: scroll;
   height:100%;
   margin-bottom: 60px;
+  -ms-overflow-style: none;
+  scrollbar-width: 0px;
+
 }
+/* .mainContainer::-webkit-scrollbar {
+    display: none;
+} */
 </style>

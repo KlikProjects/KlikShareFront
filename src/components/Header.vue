@@ -1,19 +1,25 @@
 <template>
-  <div class="navbar sticky-top">
-    <div class="d-flex align-items-start flex-column mb-5">
-      <router-link to="/signup">
-        <button class="enterButtons" type="submit">Sign Up</button>
-      </router-link>
-      <router-link to="/login">
-        <button class="enterButtons" type="submit">Login</button>
-      </router-link>
+  <div class="container-fluid d-flex flex-row justify-content-between align-items-center navbar">
+    
+    <img class="img-logo" src="@/assets/img/logofinal.png" alt="Logo" />
+    
+    <div class="d-flex flex-column">
+      <div class="d-flex align-items-start flex-row">
+        <router-link to="/signup">
+          <button class="bt-user" type="submit">Sign Up |</button>
+        </router-link>
+        <router-link to="/login">
+          <button class="bt-user" type="submit">Login</button>
+        </router-link>
+      </div>
+      <div class="d-flex justify-content-end">
+          <router-link to="/Profile">
+          <span class="iconify" data-icon="bx:bx-user-circle" data-inline="false"></span>
+          </router-link>
+      </div>
     </div>
-    <div>
-      <img class="img" src="@/assets/img/logofinal.png" alt="Logo" />
-    </div>
-    <router-link to="/Profile">
-      <span class="iconify" data-icon="bx:bx-user-circle" data-inline="false"></span>
-    </router-link>
+    
+    
   </div>
 </template>
 
@@ -24,9 +30,27 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
+.navbar{
+  background-color: #4a483f;
+  height: 12vh;
+}
+.img-logo{
+  width: auto;
+  height: 90%;
+}
+.iconify {
+  width: 30px;
+  height: auto;
+  color: #CCF2F3;
+}
+.bt-user{
+  background-color: transparent;
+  border: none;
+  color: #CCF2F3;
+}
+
+/* h3 {
   margin: 40px 0 0;
 }
 ul {
@@ -53,9 +77,8 @@ a {
   color: #a4ebf3;
   margin-bottom: 45px;
 }
-.img {
+.img-logo {
   height: 60px;
-  margin-bottom: 50px;
 }
 .btn {
   color: black;
@@ -67,6 +90,6 @@ a {
   background-color: #4a483f;
   color: #a4ebf3;
   border: #a4ebf3;
-}
+} */
 
 </style>

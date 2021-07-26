@@ -40,7 +40,6 @@ export default {
   justify-content: space-around;
   height: 72vh;
 }
-
 .headerContainer {
   justify-content: center;
   align-items: center;
