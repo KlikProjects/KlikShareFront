@@ -10,14 +10,14 @@
       ></router-link>
     </div>
     <form class="create d-flex align-items-center flex-column  mt-1">
-      <input type="file" placeholder="upload image" class="upload" />
+    
       <h6>Title</h6>
       <input
         type="text"
         class="input mb-2 rounded-pill"
         required
         title="title"
-        v-bind="product.title"
+        v-model="product.title"
       />
       <h6>Description</h6>
       <input
@@ -25,7 +25,7 @@
         class="mb-2 rounded-pill"
         required
         description="description"
-        v-bind="product.description"
+        v-model="product.description"
       />
       <h6>Imagen</h6>
       <input
@@ -33,7 +33,7 @@
         class="mb-2 rounded-pill"
         required
         image="image"
-        v-bind="product.image"
+        v-model="product.image"
       />
 
       <button @click.prevent="createOneProduct" type="submit" class="">
@@ -54,13 +54,26 @@
           title: "",
           description: "",
           image: "",
+          category: "stuff",
+          klikcoinsProducts: 30,
+
+
         },
       };
     },
     methods: {
       createOneProduct() {
+        console.log("ayuda")
+      var data={
+          title: this.product.title,
+          description: this.product.description,
+          image: this.product.image,
+          category: this.product.category,
+          klikcoinsProducts: this.product.klikcoinsProducts,
+          
+        }
        
-        apiService.createProduct(this.product).then((response) => {
+        apiService.createProduct(data).then((response) => {
           this.product = response.data;
         });
       },
