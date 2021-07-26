@@ -62,9 +62,9 @@
     width: 160px;
     height: 270px;
     display: flex;
-justify-content: center;
-align-content: ;
-align-items: center;
+    justify-content: center;
+    align-content: ;
+    align-items: center;
 
   }
 
