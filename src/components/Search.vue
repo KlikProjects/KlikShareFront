@@ -3,13 +3,13 @@
     <input type="text" placeholder="Search.." name="search" class="form-control form-control-sm input-search"/>
     <a href="#" class="iconify" data-icon="bx:bx-search" data-inline="false"></a>
   </div>
-  <div class="buttons">
+  <!-- <div class="buttons">
       <a href="#" class="bt-filter btn btn-sm" role="button">Ropa</a>
       <a href="#" class="bt-filter btn btn-sm" role="button">Electrónica</a>
       <a href="#" class="bt-filter btn btn-sm" role="button">Muebles</a>
       <a href="#" class="bt-filter btn btn-sm" role="button">Plantas</a>
       <a href="#" class="bt-filter-invert btn btn-sm" role="button">OrderBy</a>
-  </div>
+  </div> -->
 </template>
 
 <script>

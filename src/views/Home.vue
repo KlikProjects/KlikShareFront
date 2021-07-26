@@ -2,7 +2,7 @@
   <div class="contenido">
     <div class="header">
       <div class="headerContainer">
-       <!--<Search /> -->
+      <Search />
       </div>
     </div>
     <div class="home">
