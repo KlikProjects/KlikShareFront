@@ -11,6 +11,7 @@
     </div>
     <button class="exitbtn m-3" @click="goProfile()">Perfil</button>
     <button @click="goBack" type="button" class="exitbtn">Volver</button>
+    <button @click.prevent="deleteProduct"  class="exitbtn">Delete</button>
   </div>
 </template>
 <script>
@@ -43,6 +44,15 @@
       goProfile() {
         this.$router.push("/userProfile");
       },
+      deleteProduct(){
+          apiService.deleteProduct(this.id).then((response) => {
+          this.product = response.data;
+          this.goBack();         
+        });
+
+        
+
+      }
     },
   };
 </script>
