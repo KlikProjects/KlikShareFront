@@ -1,10 +1,30 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <header>
+    <Header />
+  </header>
+  <main>
+    <div class="mainContainer">
+      <router-view />
+    </div>
+  </main>
+
+  <footer>
+    <Footer />
+  </footer>
 </template>
+<script>
+// @ is an alias to /src
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+
+export default {
+  name: "Home",
+  components: {
+    Footer,
+    Header,
+  },
+};
+</script>
 
 <style>
 #app {
@@ -26,5 +46,11 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.mainContainer {
+  background-color: #c4c4c4;
+  overflow: scroll;
+  height:100%;
+  margin-bottom: 60px;
 }
 </style>
