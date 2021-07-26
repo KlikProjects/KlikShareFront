@@ -1,21 +1,14 @@
 <template>
   <div class="searchfield">
-    <input
-      type="text"
-      placeholder="Search.."
-      name="search"
-      class=" placeholder w-50 mb-2 rounded-pill "
-    />
-
-    <span class="iconify" data-icon="bx:bx-search" data-inline="false"> </span>
-
-    <div class="buttons">
-      <a href="#" class="class btn  rounded-pill">Ropa</a>
-      <a href="#" class="class btn m-1 rounded-pill">Electronica</a>
-      <a href="#" class="class btn m-1 rounded-pill">Muebles</a>
-      <a href="#" class="class btn m-1 rounded-pill">Plantas</a>
-      <a href="#" class=" class btn m-1 rounded-pill">OrdeBy</a>
-    </div>
+    <input type="text" placeholder="Search.." name="search" class="form-control form-control-sm input-search"/>
+    <a href="#" class="iconify" data-icon="bx:bx-search" data-inline="false"></a>
+  </div>
+  <div class="buttons">
+      <a href="#" class="bt-filter btn btn-sm" role="button">Ropa</a>
+      <a href="#" class="bt-filter btn btn-sm" role="button">Electrónica</a>
+      <a href="#" class="bt-filter btn btn-sm" role="button">Muebles</a>
+      <a href="#" class="bt-filter btn btn-sm" role="button">Plantas</a>
+      <a href="#" class="bt-filter-invert btn btn-sm" role="button">OrderBy</a>
   </div>
 </template>
 
@@ -43,27 +36,43 @@ a {
   color: #42b983;
 }
 .iconify {
-  width: 40px;
-  height: 80%;
-  color: #a4ebf3;
-  margin-bottom: 5;
-}
-.btn {
-  color: black;
+  width: 30px;
+  height: auto;
+  color: #CCF2F3;
+  cursor: pointer;
 }
 .searchfield {
   margin-top: 20px;
-  margin-left: 0px;
   align-items: center;
   justify-content: center;
-  display: block;
+  display: flex;
+}
+.input-search{
+  border-radius: 1rem;
+  border: none;
+  width: 50%;
 }
 .buttons {
   margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-left: 0.5rem;
 }
-
-.class {
+.bt-filter {
+  background-color: #CCF2F3;
+  color: #4A483F;
+  font-size: 12px;
+  border-radius: 15px;
+  margin: 0.2rem;
+}
+.bt-filter-invert{
   background-color:#4A483F;
-  color: #A4EBF3;
+  color: #CCF2F3;
+  font-size: 12px;
+  border-radius: 15px;
+  margin: 0.2rem;
 }
 </style>

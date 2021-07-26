@@ -1,22 +1,19 @@
 <template>
   <div class="navbar sticky-top">
     <div class="d-flex align-items-start flex-column mb-5">
-    <router-link to="/signup">
-      <button class="enterButtons" type="submit">Sign Up</button>
-    </router-link>
-    <router-link to="/login">
-      <button class="enterButtons" type="submit">Login</button>
-    </router-link>
-  </div>
+      <router-link to="/signup">
+        <button class="enterButtons" type="submit">Sign Up</button>
+      </router-link>
+      <router-link to="/login">
+        <button class="enterButtons" type="submit">Login</button>
+      </router-link>
+    </div>
     <div>
       <img class="img" src="@/assets/img/logofinal.png" alt="Logo" />
     </div>
-      <router-link to="/Profile">
-      <span class="iconify" data-icon="bx:bx-user-circle" data-inline="false">
-      </span>
-      </router-link>
-  
-
+    <router-link to="/Profile">
+      <span class="iconify" data-icon="bx:bx-user-circle" data-inline="false"></span>
+    </router-link>
   </div>
 </template>
 
@@ -54,7 +51,6 @@ a {
   width: 50px;
   height: 40%;
   color: #a4ebf3;
-  position: flex-start;
   margin-bottom: 45px;
 }
 .img {
@@ -64,7 +60,7 @@ a {
 .btn {
   color: black;
 }
-searchbar {
+.searchbar {
   width: 10px;
 }
 .enterButtons {

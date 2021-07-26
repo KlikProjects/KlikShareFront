@@ -6,8 +6,8 @@
       </div>
     </div>
     <div class="home">
-      <div class="cardContainer" v-for="num in numbers" v-bind:key="num">
-        <div class="col"><Card /></div>
+      <div v-for="num in numbers" v-bind:key="num">
+        <Card />
       </div>
     </div>
   </div>
@@ -38,6 +38,7 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  height: 72vh;
 }
 
 .headerContainer {
