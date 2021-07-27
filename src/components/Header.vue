@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid d-flex flex-row justify-content-between align-items-center navbar">
-    <img class="img-logo" src="@/assets/img/logofinal.png" alt="Logo" />
+    <router-link to="/" class="ct-img"><img class="img-logo" src="@/assets/img/logofinal.png" alt="Logo" /></router-link>
     <div class="d-flex flex-column">
       <div class="d-flex align-items-start flex-row">
         <template v-if="!authenticated">
@@ -52,12 +52,16 @@
 <style scoped>
 .navbar{
   background-color: #4a483f;
-  height: 12vh;
+  height: 10vh;
 }
 .img-logo{
   width: auto;
   height: 90%;
 }
+.ct-img{
+  height: 100%;
+}
+
 .iconify {
   width: 30px;
   height: auto;

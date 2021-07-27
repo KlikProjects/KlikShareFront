@@ -1,12 +1,15 @@
 <template>
-  <div class="formulario">
+  <div class="form">
     <form @submit.prevent="submitLogin()">
-
-      <label for="email">Email:</label>
-      <input type="text" name="email" id="email" v-model="form.email" />
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" v-model="form.password" />
-      <button class="loginbtn" type="submit">Login</button>
+      <div class="mb-3">
+        <label for="email" class="form-label txt-label">Email:</label>
+        <input type="text" name="email" id="email" v-model="form.email" class="form-control txt-label" />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label txt-label">Password:</label>
+        <input type="password" name="password" id="password" v-model="form.password" class="form-control txt-label" />
+      </div>
+      <button class="bt-login m-3" type="submit">Login</button>
     </form>
   </div>
 </template>
@@ -37,19 +40,24 @@ import {mapActions} from 'vuex'
 
 </script>
 <style scoped>
-  .formulario {
-    overflow: hidden;
+  .txt-label{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+  }
+  .form {
     display: grid;
     place-content: center;
-    font-size: 25px;
-    font-family: cursive;
+    font-size: 20px;
     color: #4a483f;
-    height:95vh;
+    height:81vh;
   }
-
-  .loginbtn {
-    background-color: #4a483f;
-    color: #a4ebf3;
-    border-radius: 50%;
+  .bt-login{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    border-radius: 15px;
+    background-color: #4A483F;
+    color: #CCF2F3;
+    border: none;
+    font-size: 20px;
+    width: 110px;
+    height: auto;
   }
 </style>

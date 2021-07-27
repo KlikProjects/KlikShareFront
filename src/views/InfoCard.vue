@@ -1,17 +1,19 @@
 <template>
-  <div class="cardInfo">
-    <p class="m-3">{{ product.title }}</p>
+  <div class="d-flex flex-column justify-content-center align-items-center ct-card p-5">
+    <h3 class="txt-title m-2">{{ product.title }}</h3>
     <p>{{ product.description }}</p>
     <div>
       <img
         :src="product.image"
-        class="rounded float-start"
+        class="img-product mt-3"
         v-bind:key="product.image"
       />
     </div>
-    <button class="exitbtn m-3" @click="goProfile()">Perfil</button>
-    <button @click="goBack" type="button" class="exitbtn">Volver</button>
-    <button @click.prevent="deleteProduct"  class="exitbtn">Delete</button>
+    <div class="d-flex flex-row p-5">
+      <button class="bt px-3 m-2" @click="goProfile()">Perfil</button>
+      <button @click="goBack" type="button" class="bt px-3 m-2">Volver</button>
+      <button @click.prevent="deleteProduct" class="bt px-3 m-2">Eliminar</button>
+    </div>
   </div>
 </template>
 <script>
@@ -49,25 +51,30 @@
           this.product = response.data;
           this.goBack();         
         });
-
-        
-
       }
     },
   };
 </script>
+
 <style scoped>
-  .exitbtn {
-    background-color: #4a483f;
-    color: #a4ebf3;
-    border-radius: 50%;
-    margin-top: 20%;
+  .ct-card {
+    height: 81vh;
   }
-  .cardInfo {
-    margin-right: 25%;
-    margin-left: 25%;
-    margin-top: 10%;
-    margin-bottom: 31%;
-    height: vh;
+  .img-product{
+    width: 100%;
+    height: auto;
+  }
+  .txt-title{
+    font-size: 2em;
+  }
+  .bt{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    border-radius: 15px;
+    background-color: #4A483F;
+    color: #CCF2F3;
+    border: none;
+    font-size: 15px;
+    width: auto;
+    height: auto;
   }
 </style>
