@@ -11,23 +11,22 @@
         />
       </div>
     </template>
-
     <template v-if="editable">
-      <input type="text" placeholder="{{product.title}}" v-model="product.title" id="product.title" name="product.title">
-      <input type="text" placeholder="{{product.description}}" v-model="product.description" id="product.description" name="product.descriptiontitle" >
+      <input type="text" placeholder="{{product.title}}" v-model="product.title" id="product.title" name="product.title" class="form-control input-edit">
+      <textarea type="text" cols="30" rows="10" placeholder="{{product.description}}" v-model="product.description" id="product.description" name="product.descriptiontitle" class="form-control mt-1 input-edit"></textarea>
       <img
           :src="product.image"
-          class="rounded float-start"
-          v-bind:key="product.image"
-        />
+          class="img-product mt-3"
+          v-bind:key="product.image"/>
     </template>
-
     <div class="d-flex flex-row p-5">
-      <button class="bt px-3 m-2" @click="goProfile()">Perfil</button>
-      <button @click="goBack" type="button" class="bt px-3 m-2">Volver</button>
+      <button class="bt px-3 m-2" @click="goProfile()" v-if="!editable">Perfil</button>
       <button @click.prevent="deleteProduct" v-if="!editable" class="bt px-3 m-2">Eliminar</button>
-      <button @click.prevent="makeEditable();editProduct()" v-if="editable"  class="exitbtn">Done</button>
+      <button @click.prevent="makeEditable()" v-if="!editable" class="bt px-3 m-2">Editar</button>
+      <button @click.prevent="makeEditable();editProduct()" v-if="editable" class="bt px-3 m-2">Actualizar</button>
+      <button @click="goToInfoCard" v-if="editable" class="bt px-3 m-2">Cancelar</button>
     </div>
+    <img src="../assets/previous.svg" @click="goBack" v-if="!editable" class="img-back"/>
   </div>
 </template>
 
@@ -59,6 +58,9 @@
       goBack() {
         this.$router.push("/");
       },
+      goToInfoCard(){
+        this.$router.go(-1);
+      },
       goProfile() {
         this.$router.push("/userProfile");
       },
@@ -67,7 +69,7 @@
           this.product = response.data;
           this.goBack();         
         });
-      },
+        },
       makeEditable(){
         this.editable = !this.editable; 
         console.log(this.editable);
@@ -94,7 +96,7 @@
     height: 81vh;
   }
   .img-product{
-    width: 100%;
+    width: 80%;
     height: auto;
   }
   .txt-title{
@@ -109,5 +111,17 @@
     font-size: 15px;
     width: auto;
     height: auto;
+  }
+  .img-back{
+    width: 30px;
+    display: inline-grid;
+    position: absolute;
+    bottom: 12%;
+    right: 7%;
+    filter: invert(23%) sepia(2%) saturate(3078%) hue-rotate(12deg) brightness(99%) contrast(80%);
+    cursor: pointer;
+  }
+  .input-edit{
+    width: 80%;
   }
 </style>
