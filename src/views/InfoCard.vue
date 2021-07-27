@@ -1,21 +1,36 @@
 <template>
   <div class="d-flex flex-column justify-content-center align-items-center ct-card p-5">
-    <h3 class="txt-title m-2">{{ product.title }}</h3>
-    <p>{{ product.description }}</p>
-    <div>
+    <template v-if="!editable">
+      <h3 class="txt-title m-2" :contenteditable="editable">{{ product.title }}</h3>
+      <p :contenteditable="editable">{{ product.description }}</p>
+      <div>
+        <img
+          :src="product.image"
+          class="img-product mt-3"
+          v-bind:key="product.image"
+        />
+      </div>
+    </template>
+
+    <template v-if="editable">
+      <input type="text" placeholder="{{product.title}}" v-model="product.title" id="product.title" name="product.title">
+      <input type="text" placeholder="{{product.description}}" v-model="product.description" id="product.description" name="product.descriptiontitle" >
       <img
-        :src="product.image"
-        class="img-product mt-3"
-        v-bind:key="product.image"
-      />
-    </div>
+          :src="product.image"
+          class="rounded float-start"
+          v-bind:key="product.image"
+        />
+    </template>
+
     <div class="d-flex flex-row p-5">
       <button class="bt px-3 m-2" @click="goProfile()">Perfil</button>
       <button @click="goBack" type="button" class="bt px-3 m-2">Volver</button>
-      <button @click.prevent="deleteProduct" class="bt px-3 m-2">Eliminar</button>
+      <button @click.prevent="deleteProduct" v-if="!editable" class="bt px-3 m-2">Eliminar</button>
+      <button @click.prevent="makeEditable();editProduct()" v-if="editable"  class="exitbtn">Done</button>
     </div>
   </div>
 </template>
+
 <script>
   import Card from "..//components/Card.vue";
   import { apiService } from "..//services/apiService.js";
@@ -24,6 +39,7 @@
       return {
         product: [],
         id: this.$route.params.id,
+        editable:false,
       };
     },
     name: "infoCard",
@@ -51,6 +67,23 @@
           this.product = response.data;
           this.goBack();         
         });
+      },
+      makeEditable(){
+        this.editable = !this.editable; 
+        console.log(this.editable);
+      },
+      editProduct(){
+           var data = {
+            id: this.product.id,
+            title: this.product.title,
+            description:this.product.description,
+            image:this.product.image,
+            category:this.product.category,
+            klikcoinsProducts:this.product.klikcoinsProducts,
+        };
+        apiService.updateProduct(this.id, data).then((response)=>{
+          this.product=response.data;
+        })
       }
     },
   };
