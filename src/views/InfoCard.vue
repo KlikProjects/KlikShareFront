@@ -1,7 +1,9 @@
 <template>
   <div class="cardInfo">
-    <p class="m-3">{{ product.title }}</p>
-    <p>{{ product.description }}</p>
+
+   <template v-if="!editable">
+    <p class="m-3" :contenteditable="editable" v-bind:key="product.title">{{ product.title }}</p>
+    <p :contenteditable="editable" v-bind:key="product.description">{{ product.description }}</p>
     <div>
       <img
         :src="product.image"
@@ -9,9 +11,22 @@
         v-bind:key="product.image"
       />
     </div>
+    </template>
+    <template v-if="editable">
+    <input type="text" placeholder="{{product.title}}" v-model="product.title" id="product.title" name="product.title">
+    <input type="text" placeholder="{{product.description}}" v-model="product.description" id="product.description" name="product.descriptiontitle" >
+     <img
+        :src="product.image"
+        class="rounded float-start"
+        v-bind:key="product.image"
+      />
+    </template>
+    
     <button class="exitbtn m-3" @click="goProfile()">Perfil</button>
     <button @click="goBack" type="button" class="exitbtn">Volver</button>
-    <button @click.prevent="deleteProduct"  class="exitbtn">Delete</button>
+    <button @click.prevent="deleteProduct" v-if="!editable" class="exitbtn">Delete</button>
+    <button @click.prevent="makeEditable()" v-if="!editable"  class="exitbtn">Edit</button>
+    <button @click.prevent="makeEditable();editProduct()" v-if="editable"  class="exitbtn">Done</button>
   </div>
 </template>
 <script>
@@ -22,6 +37,7 @@
       return {
         product: [],
         id: this.$route.params.id,
+        editable:false,
       };
     },
     name: "infoCard",
@@ -49,10 +65,30 @@
           this.product = response.data;
           this.goBack();         
         });
+        },
+      makeEditable(){
+        this.editable = !this.editable; 
+        console.log(this.editable);
+      },
+      editProduct(){
+           var data = {
+            id: this.product.id,
+            title: this.product.title,
+            description:this.product.description,
+            image:this.product.image,
+            category:this.product.category,
+            klikcoinsProducts:this.product.klikcoinsProducts,
+        };
+        apiService.updateProduct(this.id, data).then((response)=>{
+          this.product=response.data;
+        })
+
+
+      }
 
         
 
-      }
+      
     },
   };
 </script>
