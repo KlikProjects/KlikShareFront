@@ -2,8 +2,8 @@
   <div class="cardInfo">
 
    <template v-if="!editable">
-    <p class="m-3" :contenteditable="editable" v-bind:key="product.title">{{ product.title }}</p>
-    <p :contenteditable="editable" v-bind:key="product.description">{{ product.description }}</p>
+    <p class="m-3" :contenteditable="editable" >{{ product.title }}</p>
+    <p :contenteditable="editable" >{{ product.description }}</p>
     <div>
       <img
         :src="product.image"
