@@ -39,7 +39,7 @@ import {mapActions} from 'vuex'
     }
 
 </script>
-<style scoped>
+<style>
   .txt-label{
     font-family: Avenir, Helvetica, Arial, sans-serif;
   }

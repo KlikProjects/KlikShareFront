@@ -1,7 +1,5 @@
 <template>
   <div class="gifts pt-3">
-
-
     <template v-if="authenticated">
       <h5>Hola {{user.name}}, aquí podrás canjear tus klikcoins por premios</h5>
       <div>
@@ -9,17 +7,12 @@
         <p>Tienes {{user.klikcoinsUsers}} KlikCoins</p>
       </div>
     </template> 
-
-      <template v-if="!authenticated">
+    <template v-if="!authenticated">
       <h5>Hola, aquí podrás canjear tus klikcoins por premios</h5>
       <div>
         <p>Accede a tu cuenta para saber cuantos klikcoins tienes acumulados</p>
       </div>
-      </template>
-    
-
-
-
+    </template>
     <div class="d-flex flex-row justify-content-center align-items-center flex-wrap">
       <div class="ct-gift m-3">
         <div class="ct-elements p-2">
