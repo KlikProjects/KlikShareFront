@@ -1,19 +1,35 @@
 <template>
-  <div class="cardInfo">
-    <p class="m-3">{{ product.title }}</p>
-    <p>{{ product.description }}</p>
-    <div>
+  <div class="d-flex flex-column justify-content-center align-items-center ct-card p-5">
+    <template v-if="!editable">
+      <h3 class="txt-title m-2" :contenteditable="editable">{{ product.title }}</h3>
+      <div class="d-flex justify-content-center align-items-center">
+        <img
+          :src="product.image"
+          class="img-product mt-3"
+          v-bind:key="product.image"
+        />
+      </div>
+      <p class="mt-2" :contenteditable="editable">{{ product.description }}</p>
+    </template>
+    <template v-if="editable">
+      <input type="text" placeholder="{{product.title}}" v-model="product.title" id="product.title" name="product.title" class="form-control input-edit">
       <img
-        :src="product.image"
-        class="rounded float-start"
-        v-bind:key="product.image"
-      />
+          :src="product.image"
+          class="img-product mt-3"
+          v-bind:key="product.image"/>
+      <textarea type="text" cols="30" rows="10" placeholder="{{product.description}}" v-model="product.description" id="product.description" name="product.descriptiontitle" class="form-control mt-1 input-edit"></textarea>
+    </template>
+    <div class="d-flex flex-row p-2">
+      <button class="bt px-3 m-2" @click="goProfile()" v-if="!editable">Perfil</button>
+      <button @click.prevent="deleteProduct" v-if="!editable" class="bt px-3 m-2">Eliminar</button>
+      <button @click.prevent="makeEditable()" v-if="!editable" class="bt px-3 m-2">Editar</button>
+      <button @click.prevent="makeEditable();editProduct()" v-if="editable" class="bt px-3 m-2">Actualizar</button>
+      <button @click="goToInfoCard" v-if="editable" class="bt px-3 m-2">Cancelar</button>
     </div>
-    <button class="exitbtn m-3" @click="goProfile()">Perfil</button>
-    <button @click="goBack" type="button" class="exitbtn">Volver</button>
-    <button @click.prevent="deleteProduct"  class="exitbtn">Delete</button>
+    <img src="../assets/previous.svg" @click="goBack" v-if="!editable" class="img-back"/>
   </div>
 </template>
+
 <script>
   import Card from "..//components/Card.vue";
   import { apiService } from "..//services/apiService.js";
@@ -22,6 +38,7 @@
       return {
         product: [],
         id: this.$route.params.id,
+        editable:false,
       };
     },
     name: "infoCard",
@@ -41,6 +58,9 @@
       goBack() {
         this.$router.push("/");
       },
+      goToInfoCard(){
+        this.$router.go(-1);
+      },
       goProfile() {
         this.$router.push("/userProfile");
       },
@@ -49,25 +69,60 @@
           this.product = response.data;
           this.goBack();         
         });
-
-        
-
+        },
+      makeEditable(){
+        this.editable = !this.editable; 
+        console.log(this.editable);
+      },
+      editProduct(){
+        var data = {
+          id: this.product.id,
+          title: this.product.title,
+          description:this.product.description,
+          image:this.product.image,
+          category:this.product.category,
+          klikcoinsProducts:this.product.klikcoinsProducts,
+        };
+        apiService.updateProduct(this.id, data).then((response)=>{
+          this.product=response.data;
+        })
       }
     },
   };
 </script>
+
 <style scoped>
-  .exitbtn {
-    background-color: #4a483f;
-    color: #a4ebf3;
-    border-radius: 50%;
-    margin-top: 20%;
+  .ct-card {
+    height: 81vh;
   }
-  .cardInfo {
-    margin-right: 25%;
-    margin-left: 25%;
-    margin-top: 10%;
-    margin-bottom: 31%;
-    height: vh;
+  .img-product{
+    width: 100vw;
+    height: 40vh;
+    object-fit: contain;
+  }
+  .txt-title{
+    font-size: 2em;
+  }
+  .bt{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    border-radius: 15px;
+    background-color: #4A483F;
+    color: #CCF2F3;
+    border: none;
+    font-size: 15px;
+    width: auto;
+    height: auto;
+  }
+  .img-back{
+    width: 30px;
+    display: inline-grid;
+    position: absolute;
+    bottom: 12%;
+    right: 7%;
+    filter: invert(23%) sepia(2%) saturate(3078%) hue-rotate(12deg) brightness(99%) contrast(80%);
+    cursor: pointer;
+  }
+  .input-edit{
+    width: 80%;
   }
 </style>

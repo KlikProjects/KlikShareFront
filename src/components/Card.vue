@@ -1,3 +1,4 @@
+import Header from '@/components/Header.vue';
 <template>
   <div class="ct-cards">
     <div class="ct-card">
@@ -51,8 +52,9 @@
     filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
   }
   .cardImg{
-    width: auto;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
   }
   .txt-card{
     position: absolute;

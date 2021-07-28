@@ -14,7 +14,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Card from "@/components/Card.vue";
 import Search from "@/components/Search.vue";
 import {apiService} from "../services/apiService";
@@ -39,9 +38,8 @@ export default {
     async getAllProducts() {
         apiService.getProducts().then((response) => {
           this.products = response.data})
-       }
     }
-
+  }
 }
 </script>
 
