@@ -27,6 +27,8 @@
     <button @click.prevent="deleteProduct" v-if="!editable" class="exitbtn">Delete</button>
     <button @click.prevent="makeEditable()" v-if="!editable"  class="exitbtn">Edit</button>
     <button @click.prevent="makeEditable();editProduct()" v-if="editable"  class="exitbtn">Done</button>
+     <button @click.prevent="requestPr()" v-if="!editable"  class="exitbtn">Request</button>
+    
   </div>
 </template>
 <script>
@@ -84,6 +86,10 @@
         })
 
 
+      },
+      requestPr(){
+        apiService.requestProduct(this.id)
+        console.log("hola")
       }
 
         

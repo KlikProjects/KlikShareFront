@@ -1,9 +1,9 @@
 <template>
   <div class="gifts">
-    <h1>Hola ...</h1>
+    <h1>Hola {{user.name}}</h1>
     <div>
       <img class="klikcoins" src="@\assets\klikcoin.png" alt="klikcoin" />
-      <p>--- KlikCoins</p>
+      <p>{{user.klikcoinsUsers}} KlikCoins</p>
     </div>
     <div class="card-deck">
       <div class="card rounded d-flex flex-row align-items-center m-5 cardpremio">
@@ -43,6 +43,20 @@
   </div>
 </template>
 
+
+<script>
+import { mapGetters} from "vuex";
+export default {
+  name:"Gifts",
+   computed: {
+      ...mapGetters({
+        authenticated: "auth/authenticated",
+        user: "auth/user",
+      }),
+  
+}
+}
+</script>
 <style scoped>
 .klikcoins {
   width: 30px;
