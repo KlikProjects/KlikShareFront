@@ -1,10 +1,24 @@
 <template>
   <div class="gifts pt-3">
-    <h5>Hola {{user.name}}, aquí podrás canjear tus klikcoins por premios</h5>
-    <div>
-      <img class="klikcoins" src="@\assets\klikcoin.png" alt="klikcoin" />
-      <p>Tienes {{user.klikcoinsUsers}} KlikCoins</p>
-    </div>
+
+
+    <template v-if="authenticated">
+      <h5>Hola {{user.name}}, aquí podrás canjear tus klikcoins por premios</h5>
+      <div>
+        <img class="klikcoins" src="@\assets\klikcoin.png" alt="klikcoin" />
+        <p>Tienes {{user.klikcoinsUsers}} KlikCoins</p>
+      </div>
+    </template> 
+
+      <template v-if="!authenticated">
+      <h5>Hola, aquí podrás canjear tus klikcoins por premios</h5>
+      <div>
+        <p>Accede a tu cuenta para saber cuantos klikcoins tienes acumulados</p>
+      </div>
+      </template>
+    
+
+
 
     <div class="d-flex flex-row justify-content-center align-items-center flex-wrap">
       <div class="ct-gift m-3">
@@ -50,12 +64,17 @@
 import { mapGetters } from "vuex";
 export default {
   name: "Gifts",
-    computed: {
+  data() {
+      return {
+      
+      };
+    },
+      computed: {
       ...mapGetters({
         authenticated: "auth/authenticated",
         user: "auth/user",
       }),
-    }
+    } 
 }
 </script>
 
