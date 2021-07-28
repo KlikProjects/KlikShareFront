@@ -2,24 +2,24 @@
   <div class="d-flex flex-column justify-content-center align-items-center ct-card p-5">
     <template v-if="!editable">
       <h3 class="txt-title m-2" :contenteditable="editable">{{ product.title }}</h3>
-      <p :contenteditable="editable">{{ product.description }}</p>
-      <div>
+      <div class="d-flex justify-content-center align-items-center">
         <img
           :src="product.image"
           class="img-product mt-3"
           v-bind:key="product.image"
         />
       </div>
+      <p class="mt-2" :contenteditable="editable">{{ product.description }}</p>
     </template>
     <template v-if="editable">
       <input type="text" placeholder="{{product.title}}" v-model="product.title" id="product.title" name="product.title" class="form-control input-edit">
-      <textarea type="text" cols="30" rows="10" placeholder="{{product.description}}" v-model="product.description" id="product.description" name="product.descriptiontitle" class="form-control mt-1 input-edit"></textarea>
       <img
           :src="product.image"
           class="img-product mt-3"
           v-bind:key="product.image"/>
+      <textarea type="text" cols="30" rows="10" placeholder="{{product.description}}" v-model="product.description" id="product.description" name="product.descriptiontitle" class="form-control mt-1 input-edit"></textarea>
     </template>
-    <div class="d-flex flex-row p-5">
+    <div class="d-flex flex-row p-2">
       <button class="bt px-3 m-2" @click="goProfile()" v-if="!editable">Perfil</button>
       <button @click.prevent="deleteProduct" v-if="!editable" class="bt px-3 m-2">Eliminar</button>
       <button @click.prevent="makeEditable()" v-if="!editable" class="bt px-3 m-2">Editar</button>
@@ -75,13 +75,13 @@
         console.log(this.editable);
       },
       editProduct(){
-           var data = {
-            id: this.product.id,
-            title: this.product.title,
-            description:this.product.description,
-            image:this.product.image,
-            category:this.product.category,
-            klikcoinsProducts:this.product.klikcoinsProducts,
+        var data = {
+          id: this.product.id,
+          title: this.product.title,
+          description:this.product.description,
+          image:this.product.image,
+          category:this.product.category,
+          klikcoinsProducts:this.product.klikcoinsProducts,
         };
         apiService.updateProduct(this.id, data).then((response)=>{
           this.product=response.data;
@@ -96,8 +96,9 @@
     height: 81vh;
   }
   .img-product{
-    width: 80%;
-    height: auto;
+    width: 100vw;
+    height: 40vh;
+    object-fit: contain;
   }
   .txt-title{
     font-size: 2em;

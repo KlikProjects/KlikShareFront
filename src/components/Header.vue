@@ -22,7 +22,9 @@
       </router-link>
     </div>
   </div>
-  <p v-if="authenticated">{{ user.name }}</p>
+  <div class="ct-user">
+    <p v-if="authenticated" class="txt-user">Bienvenido {{ user.name }}</p>
+  </div>
 </template>
 
 <script>
@@ -71,5 +73,11 @@
   background-color: transparent;
   border: none;
   color: #CCF2F3;
+}
+.ct-user{
+  background-color: #CCF2F3;
+}
+.txt-user{
+  margin: 0px;
 }
 </style>
