@@ -20,4 +20,8 @@ export const apiService = {
     deleteProduct(id){
         return axios.delete(baseUrl + '/products/' + id)
     },
+
+    usersConntact(id){
+        return axios.get(baseUrl + `/usersRequest/${id}`)
+    },
 }
