@@ -20,40 +20,51 @@
       <textarea type="text" cols="30" rows="10" placeholder="{{product.description}}" v-model="product.description" id="product.description" name="product.descriptiontitle" class="form-control mt-1 input-edit"></textarea>
     </template>
     <div class="d-flex flex-row p-2">
-      <button class="bt px-3 m-2" @click="goProfile()" v-if="!editable">Perfil</button>
+      <!-- <button class="bt px-3 m-2" @click="goProfile()" v-if="!editable">Perfil</button> -->
       <button @click.prevent="deleteProduct" v-if="!editable" class="bt px-3 m-2">Eliminar</button>
       <button @click.prevent="makeEditable()" v-if="!editable" class="bt px-3 m-2">Editar</button>
+
+      <button @click.prevent="requestPr()" v-if="!editable && !isRequested" class="bt px-3 m-2">Request</button>
+      <button @click.prevent="unrequestPr()" v-if="!editable && isRequested" class="bt px-3 m-2">UnRequest</button>
+
+      
       <button @click.prevent="makeEditable();editProduct()" v-if="editable" class="bt px-3 m-2">Actualizar</button>
       <button @click="goToInfoCard" v-if="editable" class="bt px-3 m-2">Cancelar</button>
     </div>
     <img src="../assets/previous.svg" @click="goBack" v-if="!editable" class="img-back"/>
+
   </div>
 </template>
 
 <script>
-  import Card from "..//components/Card.vue";
   import { apiService } from "..//services/apiService.js";
   export default {
+    name: "infoCard",
     data() {
       return {
         product: [],
         id: this.$route.params.id,
-        editable:false,
+        editable: false,
+        isRequested: null,
       };
     },
-    name: "infoCard",
-    components: {
-      Card,
-    },
+
     beforeMount() {
       this.getProductInfo(this.id);
+      this.CheckIfProductRequested();
     },
+    computed: {},
+
     methods: {
+      async CheckIfProductRequested() {
+        let response = await apiService.checkIfRequested(this.id);
+        this.isRequested = response.data;
+        console.log(this.isRequested);
+      },
       getProductInfo(id) {
         apiService.getProduct(id).then((response) => {
           this.product = response.data;
         });
-        console.log(id);
       },
       goBack() {
         this.$router.push("/");
@@ -64,29 +75,39 @@
       goProfile() {
         this.$router.push("/userProfile");
       },
-      deleteProduct(){
-          apiService.deleteProduct(this.id).then((response) => {
+      deleteProduct() {
+        apiService.deleteProduct(this.id).then((response) => {
           this.product = response.data;
-          this.goBack();         
+          this.goBack();
         });
-        },
-      makeEditable(){
-        this.editable = !this.editable; 
+      },
+      makeEditable() {
+        this.editable = !this.editable;
         console.log(this.editable);
       },
-      editProduct(){
+      editProduct() {
         var data = {
           id: this.product.id,
           title: this.product.title,
-          description:this.product.description,
-          image:this.product.image,
-          category:this.product.category,
-          klikcoinsProducts:this.product.klikcoinsProducts,
+          description: this.product.description,
+          image: this.product.image,
+          category: this.product.category,
+          klikcoinsProducts: this.product.klikcoinsProducts,
         };
-        apiService.updateProduct(this.id, data).then((response)=>{
-          this.product=response.data;
-        })
-      }
+        apiService.updateProduct(this.id, data).then((response) => {
+          this.product = response.data;
+        });
+      },
+      requestPr() {
+        apiService.requestProduct(this.id).then((response) => {
+          this.$router.go();
+        });
+      },
+      unrequestPr() {
+        apiService.unrequestProduct(this.id).then((response) => {
+          this.$router.go();
+        });
+      },
     },
   };
 </script>

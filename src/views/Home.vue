@@ -1,13 +1,17 @@
 <template>
   <div class="contenido">
-    <div class="header">
-      <div class="headerContainer">
-      <Search />
-      </div>
+    <div class="searchfield px-5">
+      <input type="text" v-model="search" placeholder="Filtrar..." class="form-control form-control-sm input-search"/>
     </div>
-    <div class="home">
-      <div class="cardContainer" v-for="product in products" v-bind:key="product">
-        <div class="col"><Card :product="product" /></div>
+    <div class="home">  
+      <div
+        class="cardContainer"
+        v-for="product in products"
+        v-bind:key="product"
+      >
+        <a v-bind:href="product.link" target="_blank">
+          <div class="col"><Card :product="product" /></div>
+        </a>
       </div>
     </div>
   </div>
@@ -15,32 +19,36 @@
 
 <script>
 import Card from "@/components/Card.vue";
-import Search from "@/components/Search.vue";
-import {apiService} from "../services/apiService";
-
+import { apiService } from "../services/apiService";
 export default {
   name: "Home",
   components: {
     Card,
-    Search,
   },
   data() {
     return {
       products: [],
+      search: "",
     };
   },
-
-  mounted() {
-      this.getAllProducts()
+  computed: {
+    products() {
+      return this.products.filter((products) => {
+        return products.title.toLowerCase().includes(this.search.toLowerCase());
+      });
+    },
   },
-
+  mounted() {
+    this.getAllProducts();
+  },
   methods: {
     async getAllProducts() {
-        apiService.getProducts().then((response) => {
-          this.products = response.data})
-    }
-  }
-}
+      apiService.getProducts().then((response) => {
+        this.products = response.data;
+      });
+    },
+  },
+};
 </script>
 
 <style>
@@ -54,5 +62,14 @@ export default {
 .headerContainer {
   justify-content: center;
   align-items: center;
+}
+.searchfield {
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.input-search{
+  border-radius: 20px !important;
 }
 </style>
