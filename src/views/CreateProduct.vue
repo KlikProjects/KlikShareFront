@@ -56,8 +56,6 @@
           image: "",
           category: "stuff",
           klikcoinsProducts: 30,
-
-
         },
       };
     },
@@ -70,9 +68,8 @@
           image: this.product.image,
           category: this.product.category,
           klikcoinsProducts: this.product.klikcoinsProducts,
-          
         }
-       
+        
         apiService.createProduct(data).then((response) => {
           this.product = response.data;
         });
