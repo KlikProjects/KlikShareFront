@@ -1,14 +1,14 @@
 <template>
   <div class="contenido">
-    <div class="header">
+    <!-- <div class="header">
       <div class="headerContainer">
         <Search />
       </div>
-    </div>
+    </div> -->
     <div class="home">
       <div class="search-wrapper">
-        <input type="text" v-model="search" placeholder="Filtrar..." />
-        <label>Buscar</label>
+        <input type="text" v-model="search" placeholder="Filtrar..." class="form-control form-control-sm input-search"/>
+        <a href="#" class="iconify" data-icon="bx:bx-search" data-inline="false"></a>
       </div>
       <div
         class="cardContainer"
