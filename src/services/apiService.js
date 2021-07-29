@@ -26,9 +26,17 @@ export const apiService = {
         return axios.get(baseUrl + `/products/${id}/request`)
         
     },
+    checkIfRequested(id){
+        return axios.get(baseUrl + `/checkIfRequested/${id}`)
+    },
+    requestedProducts() {
+        return axios.get(baseUrl + `/requestedProducts`)
+    },
+
     unrequestProduct(id) {
         return axios.get(baseUrl + `/products/${id}/unrequest`)
         
     },
+
 
 }

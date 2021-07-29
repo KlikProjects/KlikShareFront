@@ -4,12 +4,14 @@ import { apiService } from "..//services/apiService";
 export default {
   namespaced: true,
   state: {
-    requets: null,
+    requested: null,
    
   },
 
   getters: {
-  
+    SET_REQUEST(state){
+      state.requested = tf ;
+    }
   },
 
   mutations: {
@@ -19,11 +21,16 @@ export default {
 
   },
   actions: {
-    async request({ dispatch }, id) {
-        let response = await apiService.requestProduct(id);
-  
-        dispatch("attempt", response.data.);
+    async CheckIfRequested({ dispatch }, id) {
+        let response = await apiService.requestedProducts();
+      
+        dispatch("attempt", response.data.data, id);
       },
-  
+      async attempt({ commit, state }, data, id) {
+        if (data.products.includes(id)) {
+          commit("SET_TOKEN", tf= true); 
+        }
+      }
+     
   },
 };
