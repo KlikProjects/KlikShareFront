@@ -11,25 +11,27 @@
       </div>
 
       <div class="mb-3">
-        <label for="multiple" class="form-label txt-label">Imagen</label>
-        <div class="drag-drop">
-          <input type="file" multiple="multiple" id="photo" />
-          <span class="fa-stack fa-2x">
+        <label for="image" class="form-label txt-label">URL Imagen</label>
+        <div class="mb-3">
+        <!-- <div class="drag-drop"> -->
+           <input
+              type="text"
+              class="form-control txt-label"
+              required
+              image="image"
+              v-model="product.image"
+            />
+          <!-- <input type="file" image="image" id="photo" v-model="product.image" /> -->
+          <!-- <span class="fa-stack fa-2x">
             <i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
             <i class="fa fa-circle fa-stack-1x top medium"></i>
             <i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
           </span>
-          <span class="desc">Pulsa para añadir imagen</span>
+          <span class="desc">Pulsa para añadir imagen</span> -->
         </div>
       </div>
 
-      <!-- <input
-        type="text"
-        class="mb-2 rounded-pill"
-        required
-        image="image"
-        v-model="product.image"
-      /> -->
+     
 
       <button @click.prevent="createOneProduct" type="submit" class="bt-create mt-2">Subir producto</button>
     </form>
@@ -58,8 +60,6 @@
           image: "",
           category: "stuff",
           klikcoinsProducts: 30,
-
-
         },
       };
     },
@@ -77,6 +77,8 @@
        
         apiService.createProduct(data).then((response) => {
           this.product = response.data;
+          this.$router.push("/");
+          
         });
       },
     },
@@ -84,7 +86,7 @@
 </script>
 <style>
   .ct-form{
-    height: 81vh;
+    height: 78vh;
   }
   .txt-label{
     font-family: Avenir, Helvetica, Arial, sans-serif;
