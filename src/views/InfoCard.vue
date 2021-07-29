@@ -24,10 +24,26 @@
       <button @click.prevent="deleteProduct" v-if="!editable" class="bt px-3 m-2">Eliminar</button>
       <button @click.prevent="makeEditable()" v-if="!editable" class="bt px-3 m-2">Editar</button>
 
-      <button @click.prevent="requestPr()" v-if="!editable && !isRequested" class="bt px-3 m-2">Request</button>
-      <button @click.prevent="unrequestPr()" v-if="!editable && isRequested" class="bt px-3 m-2">UnRequest</button>
+      <button 
+      @click.prevent="requestPr()"
+      v-if="!editable && !isRequested"
+      class="bt px-3 m-2"
+      >
+      Request
+      </button>
+      <button
+      @click.prevent="unrequestPr()"
+      v-if="!editable && isRequested"
+      class="bt px-3 m-2"
+      >
+      UnRequest
+      </button>
+  
 
-      
+      <!-- <button @click.prevent="requestPr()" v-if="!editable && !isRequested" class="bt px-3 m-2">Request</button>
+      <button @click.prevent="unrequestPr()" v-if="!editable && isRequested" class="bt px-3 m-2">UnRequest</button> -->
+
+
       <button @click.prevent="makeEditable();editProduct()" v-if="editable" class="bt px-3 m-2">Actualizar</button>
       <button @click="goToInfoCard" v-if="editable" class="bt px-3 m-2">Cancelar</button>
     </div>
@@ -48,13 +64,11 @@
         isRequested: null,
       };
     },
-
     beforeMount() {
       this.getProductInfo(this.id);
       this.CheckIfProductRequested();
     },
     computed: {},
-
     methods: {
       async CheckIfProductRequested() {
         let response = await apiService.checkIfRequested(this.id);
@@ -68,9 +82,6 @@
       },
       goBack() {
         this.$router.push("/");
-      },
-      goToInfoCard(){
-        this.$router.go(-1);
       },
       goProfile() {
         this.$router.push("/userProfile");
@@ -111,7 +122,6 @@
     },
   };
 </script>
-
 <style scoped>
   .ct-card {
     height: 81vh;
