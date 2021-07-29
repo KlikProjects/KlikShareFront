@@ -89,7 +89,6 @@ export default {
   font-size: 20px;
   font-weight: 700;
 }
-
 .bt-goLogin{
     font-family: Avenir, Helvetica, Arial, sans-serif;
     border-radius: 15px;

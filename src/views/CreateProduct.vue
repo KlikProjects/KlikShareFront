@@ -1,50 +1,53 @@
 <template>
-  <div class="d-flex flex-column justify-content-center align-items-center ct-form">
-    <form class="">
-      <div class="mb-3">
-        <label for="title" class="form-label txt-label">Título</label>
-        <input type="text" title="title" v-model="product.title" required class="form-control txt-label" />
-      </div>
-      <div class="mb-3">
-        <label for="description" class="form-label txt-label">Descripción</label>
-        <input type="text" description="description" v-model="product.description" required class="form-control txt-label" />
-      </div>
-
-      <div class="mb-3">
-        <label for="image" class="form-label txt-label">URL Imagen</label>
+  <template v-if="authenticated">
+    <div class="d-flex flex-column justify-content-center align-items-center ct-form">
+      <form class="">
         <div class="mb-3">
-        <!-- <div class="drag-drop"> -->
-           <input
-              type="text"
-              class="form-control txt-label"
-              required
-              image="image"
-              v-model="product.image"
-            />
-          <!-- <input type="file" image="image" id="photo" v-model="product.image" /> -->
-          <!-- <span class="fa-stack fa-2x">
-            <i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
-            <i class="fa fa-circle fa-stack-1x top medium"></i>
-            <i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
-          </span>
-          <span class="desc">Pulsa para añadir imagen</span> -->
+          <label for="title" class="form-label txt-label">Título</label>
+          <input type="text" title="title" v-model="product.title" required class="form-control txt-label" />
         </div>
+        <div class="mb-3">
+          <label for="description" class="form-label txt-label">Descripción</label>
+          <input type="text" description="description" v-model="product.description" required class="form-control txt-label" />
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label txt-label">URL Imagen</label>
+          <div class="mb-3">
+          <!-- <div class="drag-drop"> -->
+            <input
+                type="text"
+                class="form-control txt-label"
+                required
+                image="image"
+                v-model="product.image"
+              />
+            <!-- <input type="file" image="image" id="photo" v-model="product.image" /> -->
+            <!-- <span class="fa-stack fa-2x">
+              <i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
+              <i class="fa fa-circle fa-stack-1x top medium"></i>
+              <i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
+            </span>
+            <span class="desc">Pulsa para añadir imagen</span> -->
+          </div>
+        </div>
+        <button @click.prevent="createOneProduct" type="submit" class="bt-create mt-2">Subir producto</button>
+      </form>
+      <div class="">
+        <router-link to="/">
+          <img src="../assets/previous.svg" class="img-back"/>
+        </router-link>
       </div>
-
-     
-
-      <button @click.prevent="createOneProduct" type="submit" class="bt-create mt-2">Subir producto</button>
-    </form>
-    <div class="">
-      <router-link to="/">
-        <img src="../assets/previous.svg" class="img-back"/>
-      </router-link>
     </div>
-  </div>
-
-  
-
-
+  </template>
+  <template v-if="!authenticated">
+    <div class="d-flex flex-column justify-content-center align-items-center p-3 ct-profileNoAuth">
+        <p>Para crear un producto tienes que acceder a tu cuenta</p>
+        <router-link to="login">
+          <button class="bt-goLogin px-3">Ir a login</button>
+        </router-link>
+      </div>
+  </template>
 </template>
 
 <script>
@@ -110,6 +113,19 @@
     right: 7%;
     filter: invert(23%) sepia(2%) saturate(3078%) hue-rotate(12deg) brightness(99%) contrast(80%);
     cursor: pointer;
+  }
+  .ct-profileNoAuth{
+  height: 81vh;
+}
+  .bt-goLogin{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    border-radius: 15px;
+    background-color: #4A483F;
+    color: #CCF2F3;
+    border: none;
+    font-size: 15px;
+    width: auto;
+    height: auto;
   }
   .drag-drop {
     height: 8em;
