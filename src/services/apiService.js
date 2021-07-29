@@ -37,6 +37,18 @@ export const apiService = {
         return axios.get(baseUrl + `/products/${id}/unrequest`)
         
     },
+    getMyProducts(){
+        return axios.get(baseUrl + "/myProducts")
+    },
+    getUsersRequest(id){
+        return axios.get(baseUrl + `/usersRequest/${id}`)
+
+
+    },
+    giveProduct(productID, userID){
+        return axios.get(baseUrl + `/giveToUser/${productID}/${userID}`)
+
+    }
 
 
 }

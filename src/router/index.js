@@ -48,6 +48,11 @@ const routes = [
     path: '/Profile',
     name: 'Profile',
     component: () => import('../views/Profile.vue')
+  },
+  {
+    path: '/GiveTo/:id',
+    name: 'GiveTo',
+    component: () => import('../views/GiveTo.vue')
   }
     
     
