@@ -1,15 +1,9 @@
 <template>
   <div class="contenido">
-    <!-- <div class="header">
-      <div class="headerContainer">
-        <Search />
-      </div>
-    </div> -->
-    <div class="home">
-      <div class="search-wrapper">
-        <input type="text" v-model="search" placeholder="Filtrar..." class="form-control form-control-sm input-search"/>
-        <a href="#" class="iconify" data-icon="bx:bx-search" data-inline="false"></a>
-      </div>
+    <div class="searchfield px-5">
+      <input type="text" v-model="search" placeholder="Filtrar..." class="form-control form-control-sm input-search"/>
+    </div>
+    <div class="home">  
       <div
         class="cardContainer"
         v-for="product in products"
@@ -25,14 +19,12 @@
 
 <script>
 import Card from "@/components/Card.vue";
-import Search from "@/components/Search.vue";
 import { apiService } from "../services/apiService";
 
 export default {
   name: "Home",
   components: {
     Card,
-    Search,
   },
   data() {
     return {
@@ -72,5 +64,14 @@ export default {
 .headerContainer {
   justify-content: center;
   align-items: center;
+}
+.searchfield {
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.input-search{
+  border-radius: 20px !important;
 }
 </style>
