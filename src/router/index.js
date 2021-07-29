@@ -54,11 +54,8 @@ const routes = [{
         path: '/Profile',
         name: 'Profile',
         component: () =>
-            import ('../views/Profile.vue')
+            import ('../views/Profile.vue'),
     }
-
-
-
 ]
 
 const router = createRouter({

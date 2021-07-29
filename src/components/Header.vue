@@ -45,8 +45,7 @@
         this.logOutAction().then(()=>{
           this.$router.push("/")
         })
-      }
-
+      },
     }
   };
 </script>
