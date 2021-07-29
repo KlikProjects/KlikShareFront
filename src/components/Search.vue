@@ -1,6 +1,6 @@
 <template>
   <div class="searchfield">
-    <input type="text" placeholder="Search.." name="search" class="form-control form-control-sm input-search"/>
+    <input type="text" placeholder="Search..." name="search" class="form-control form-control-sm input-search" v-model="search"/>
     <a href="#" class="iconify" data-icon="bx:bx-search" data-inline="false"></a>
   </div>
   <!-- <div class="buttons">
@@ -16,6 +16,7 @@
 export default {
   name: "Search",
   props: {},
+  
 };
 </script>
 

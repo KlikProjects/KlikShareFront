@@ -2,12 +2,22 @@
   <div class="contenido">
     <div class="header">
       <div class="headerContainer">
-      <Search />
+        <Search />
       </div>
     </div>
     <div class="home">
-      <div class="cardContainer" v-for="product in products" v-bind:key="product">
-        <div class="col"><Card :product="product" /></div>
+      <div class="search-wrapper">
+        <input type="text" v-model="search" placeholder="Filtrar..." />
+        <label>Buscar</label>
+      </div>
+      <div
+        class="cardContainer"
+        v-for="product in products"
+        v-bind:key="product"
+      >
+        <a v-bind:href="product.link" target="_blank">
+          <div class="col"><Card :product="product" /></div>
+        </a>
       </div>
     </div>
   </div>
@@ -16,7 +26,7 @@
 <script>
 import Card from "@/components/Card.vue";
 import Search from "@/components/Search.vue";
-import {apiService} from "../services/apiService";
+import { apiService } from "../services/apiService";
 
 export default {
   name: "Home",
@@ -27,20 +37,28 @@ export default {
   data() {
     return {
       products: [],
+      search: "",
     };
   },
-
+  computed: {
+    products() {
+      return this.products.filter((products) => {
+        return products.title.toLowerCase().includes(this.search.toLowerCase());
+      });
+    },
+  },
   mounted() {
-      this.getAllProducts()
+    this.getAllProducts();
   },
 
   methods: {
     async getAllProducts() {
-        apiService.getProducts().then((response) => {
-          this.products = response.data})
-    }
-  }
-}
+      apiService.getProducts().then((response) => {
+        this.products = response.data;
+      });
+    },
+  },
+};
 </script>
 
 <style>
