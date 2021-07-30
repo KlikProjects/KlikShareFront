@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column justify-content-center align-items-center ct-card p-5">
+  <div class="d-flex flex-column justify-content-start align-items-center ct-card p-4">
     <template v-if="!editable">
       <h3 class="txt-title m-2" :contenteditable="editable">{{ product.title }}</h3>
       <div class="d-flex justify-content-center align-items-center">
@@ -9,7 +9,7 @@
           v-bind:key="product.image"
         />
       </div>
-      <p class="mt-2" :contenteditable="editable">{{ product.description }}</p>
+      <p class="mt-2 txt-description" :contenteditable="editable">{{ product.description }}</p>
     </template>
     <template v-if="editable">
       <input type="text" placeholder="{{product.title}}" v-model="product.title" id="product.title" name="product.title" class="form-control input-edit">
@@ -19,7 +19,7 @@
           v-bind:key="product.image"/>
       <textarea type="text" cols="30" rows="10" placeholder="{{product.description}}" v-model="product.description" id="product.description" name="product.descriptiontitle" class="form-control mt-1 input-edit"></textarea>
     </template>
-    <div class="d-flex flex-row p-2">
+    <div class="d-flex flex-row p-1">
       <!-- <button class="bt px-3 m-2" @click="goProfile()" v-if="!editable">Perfil</button> -->
       <button @click.prevent="deleteProduct" v-if="!editable" class="bt px-3 m-2">Eliminar</button>
       <button @click.prevent="makeEditable()" v-if="!editable" class="bt px-3 m-2">Editar</button>
@@ -155,5 +155,8 @@
   }
   .input-edit{
     width: 80%;
+  }
+  .txt-description{
+    margin-bottom: 0px !important;
   }
 </style>
