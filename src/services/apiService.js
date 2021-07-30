@@ -12,7 +12,7 @@ export const apiService = {
     createProduct(data) {
         console.log(data)
         return axios.post(baseUrl + '/products', data)
-        
+
     },
     updateProduct(id, data) {
         return axios.put(baseUrl + '/products/' + id, data)
@@ -22,9 +22,9 @@ export const apiService = {
     },
     requestProduct(id) {
         return axios.get(baseUrl + `/products/${id}/request`)
-        
+
     },
-    checkIfRequested(id){
+    checkIfRequested(id) {
         return axios.get(baseUrl + `/checkIfRequested/${id}`)
     },
     requestedProducts() {
@@ -33,7 +33,7 @@ export const apiService = {
 
     unrequestProduct(id) {
         return axios.get(baseUrl + `/products/${id}/unrequest`)
-        
+
     },
 
 

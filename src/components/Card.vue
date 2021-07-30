@@ -61,7 +61,8 @@ import Header from '@/components/Header.vue';
     bottom: 0%;
     color: white;
     font-size: 18px;
-    text-shadow: 0px 0px 10px #000000;
+    text-shadow: 0px 0px 4px #000;
+    font-weight: bold;
   }
   .bt-card{
     width: 150px;
