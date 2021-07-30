@@ -20,7 +20,6 @@
 <script>
 import Card from "@/components/Card.vue";
 import { apiService } from "../services/apiService";
-
 export default {
   name: "Home",
   components: {
@@ -42,7 +41,6 @@ export default {
   mounted() {
     this.getAllProducts();
   },
-
   methods: {
     async getAllProducts() {
       apiService.getProducts().then((response) => {

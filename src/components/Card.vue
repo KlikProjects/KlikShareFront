@@ -5,7 +5,7 @@ import Header from '@/components/Header.vue';
       <div class="ct-img">
         <img :src="product.image" alt="product" class="cardImg" v-bind:key="product.image"/>
       </div>
-      <p class="txt-card">{{product.title}}</p> 
+      <p class="txt-card px-1">{{product.title}}</p> 
       <router-link :to="{name:'infoCard', params:{id:product.id}}"> 
         <button class="bt-card">Más información</button>
       </router-link>
@@ -61,7 +61,8 @@ import Header from '@/components/Header.vue';
     bottom: 0%;
     color: white;
     font-size: 18px;
-    text-shadow: 0px 0px 10px #000000;
+    text-shadow: 0px 0px 4px #000;
+    font-weight: bold;
   }
   .bt-card{
     width: 150px;

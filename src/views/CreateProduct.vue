@@ -14,21 +14,7 @@
         <div class="mb-3">
           <label for="image" class="form-label txt-label">URL Imagen</label>
           <div class="mb-3">
-          <!-- <div class="drag-drop"> -->
-            <input
-                type="text"
-                class="form-control txt-label"
-                required
-                image="image"
-                v-model="product.image"
-              />
-            <!-- <input type="file" image="image" id="photo" v-model="product.image" /> -->
-            <!-- <span class="fa-stack fa-2x">
-              <i class="fa fa-cloud fa-stack-2x bottom pulsating"></i>
-              <i class="fa fa-circle fa-stack-1x top medium"></i>
-              <i class="fa fa-arrow-circle-up fa-stack-1x top"></i>
-            </span>
-            <span class="desc">Pulsa para añadir imagen</span> -->
+            <input type="text" class="form-control txt-label" required image="image" v-model="product.image"/>
           </div>
         </div>
         <button @click.prevent="createOneProduct" type="submit" class="bt-create mt-2">Subir producto</button>
@@ -52,6 +38,7 @@
 
 <script>
   import { apiService } from "..//services/apiService";
+  import { mapGetters } from "vuex";
   export default {
     name: "CreateProduct",
     data() {
@@ -66,6 +53,12 @@
         },
       };
     },
+    computed: {
+      ...mapGetters({
+        authenticated: "auth/authenticated",
+        user: "auth/user",
+      }),
+    },
     methods: {
       createOneProduct() {
         console.log("ayuda")
@@ -75,18 +68,17 @@
           image: this.product.image,
           category: this.product.category,
           klikcoinsProducts: this.product.klikcoinsProducts,
-          
-        }
-       
-        apiService.createProduct(data).then((response) => {
+      }
+      apiService.createProduct(data).then((response) => {
           this.product = response.data;
           this.$router.push("/");
-          
         });
       },
     },
+    
   };
 </script>
+
 <style>
   .ct-form{
     height: 78vh;
@@ -164,5 +156,4 @@
     text-shadow: 0 0 .25em #666;
   }
   .fa-stack .bottom { color: rgba(225, 225, 225, .75); }
-
 </style>
